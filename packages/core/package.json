@@ -1,0 +1,47 @@
+{
+  "name": "@adyaui/core",
+  "version": "0.0.1",
+  "description": "AdyaUI Core - Framework-agnostic Web Components library",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/theme.css": "./dist/theme.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "web-components",
+    "ui",
+    "components",
+    "custom-elements",
+    "design-system"
+  ],
+  "author": "AdyaUI Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/testing-library__jest-dom": "^6.0.0",
+    "jsdom": "^27.2.0",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.0",
+    "vitest": "^1.6.1"
+  }
+}

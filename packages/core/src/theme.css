@@ -1,0 +1,184 @@
+/**
+ * AdyaUI Theme CSS
+ * CSS custom properties for theming
+ */
+
+:root {
+  /* Primary Colors */
+  --aui-primary-50: #e3f2fd;
+  --aui-primary-100: #bbdefb;
+  --aui-primary-200: #90caf9;
+  --aui-primary-300: #64b5f6;
+  --aui-primary-400: #42a5f5;
+  --aui-primary-500: #2196f3;
+  --aui-primary-600: #1e88e5;
+  --aui-primary-700: #1976d2;
+  --aui-primary-800: #1565c0;
+  --aui-primary-900: #0d47a1;
+
+  --aui-primary-main: var(--aui-primary-500);
+  --aui-primary-light: var(--aui-primary-300);
+  --aui-primary-dark: var(--aui-primary-700);
+  --aui-primary-contrast: #ffffff;
+
+  /* Secondary Colors */
+  --aui-secondary-50: #f3e5f5;
+  --aui-secondary-100: #e1bee7;
+  --aui-secondary-200: #ce93d8;
+  --aui-secondary-300: #ba68c8;
+  --aui-secondary-400: #ab47bc;
+  --aui-secondary-500: #9c27b0;
+  --aui-secondary-600: #8e24aa;
+  --aui-secondary-700: #7b1fa2;
+  --aui-secondary-800: #6a1b9a;
+  --aui-secondary-900: #4a148c;
+
+  --aui-secondary-main: var(--aui-secondary-500);
+  --aui-secondary-light: var(--aui-secondary-300);
+  --aui-secondary-dark: var(--aui-secondary-700);
+  --aui-secondary-contrast: #ffffff;
+
+  /* Semantic Colors */
+  --aui-success: #4caf50;
+  --aui-error: #f44336;
+  --aui-warning: #ff9800;
+  --aui-info: #2196f3;
+
+  /* Neutral Colors - Light Mode */
+  --aui-gray-50: #fafafa;
+  --aui-gray-100: #f5f5f5;
+  --aui-gray-200: #eeeeee;
+  --aui-gray-300: #e0e0e0;
+  --aui-gray-400: #bdbdbd;
+  --aui-gray-500: #9e9e9e;
+  --aui-gray-600: #757575;
+  --aui-gray-700: #616161;
+  --aui-gray-800: #424242;
+  --aui-gray-900: #212121;
+
+  --aui-background: #ffffff;
+  --aui-surface: #f5f5f5;
+  --aui-text-primary: rgba(0, 0, 0, 0.87);
+  --aui-text-secondary: rgba(0, 0, 0, 0.6);
+  --aui-divider: rgba(0, 0, 0, 0.12);
+
+  /* Typography */
+  --aui-font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --aui-font-size-xs: 0.75rem;
+  --aui-font-size-sm: 0.875rem;
+  --aui-font-size-md: 1rem;
+  --aui-font-size-lg: 1.125rem;
+  --aui-font-size-xl: 1.25rem;
+  --aui-font-size-2xl: 1.5rem;
+  --aui-font-size-3xl: 1.875rem;
+  --aui-font-size-4xl: 2.25rem;
+
+  --aui-font-weight-light: 300;
+  --aui-font-weight-regular: 400;
+  --aui-font-weight-medium: 500;
+  --aui-font-weight-semibold: 600;
+  --aui-font-weight-bold: 700;
+
+  --aui-line-height-tight: 1.25;
+  --aui-line-height-normal: 1.5;
+  --aui-line-height-relaxed: 1.75;
+
+  /* Spacing */
+  --aui-spacing-xs: 4px;
+  --aui-spacing-sm: 8px;
+  --aui-spacing-md: 16px;
+  --aui-spacing-lg: 24px;
+  --aui-spacing-xl: 32px;
+  --aui-spacing-2xl: 48px;
+  --aui-spacing-3xl: 64px;
+
+  /* Border Radius */
+  --aui-radius-none: 0;
+  --aui-radius-sm: 4px;
+  --aui-radius-md: 8px;
+  --aui-radius-lg: 12px;
+  --aui-radius-xl: 16px;
+  --aui-radius-full: 9999px;
+
+  /* Shadows */
+  --aui-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --aui-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --aui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --aui-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --aui-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Transitions */
+  --aui-transition-fast: 150ms ease-in-out;
+  --aui-transition-base: 250ms ease-in-out;
+  --aui-transition-slow: 350ms ease-in-out;
+
+  /* Z-index */
+  --aui-z-dropdown: 1000;
+  --aui-z-sticky: 1020;
+  --aui-z-fixed: 1030;
+  --aui-z-modal-backdrop: 1040;
+  --aui-z-modal: 1050;
+  --aui-z-popover: 1060;
+  --aui-z-tooltip: 1070;
+}
+
+/* Dark Mode */
+[data-theme='dark'] {
+  --aui-background: #121212;
+  --aui-surface: #1e1e1e;
+  --aui-text-primary: rgba(255, 255, 255, 0.87);
+  --aui-text-secondary: rgba(255, 255, 255, 0.6);
+  --aui-divider: rgba(255, 255, 255, 0.12);
+
+  /* Adjust shadows for dark mode */
+  --aui-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --aui-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --aui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --aui-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+  --aui-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--aui-font-family);
+  font-size: var(--aui-font-size-md);
+  line-height: var(--aui-line-height-normal);
+  color: var(--aui-text-primary);
+  background-color: var(--aui-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility Classes */
+.aui-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--aui-spacing-md);
+}
+
+.aui-text-primary {
+  color: var(--aui-text-primary);
+}
+
+.aui-text-secondary {
+  color: var(--aui-text-secondary);
+}
+
+.aui-bg-primary {
+  background-color: var(--aui-primary-main);
+}
+
+.aui-bg-secondary {
+  background-color: var(--aui-secondary-main);
+}
+
+.aui-bg-surface {
+  background-color: var(--aui-surface);
+}

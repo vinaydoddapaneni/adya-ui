@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdyaUI Demo - Button Component</title>
+  <style>
+    body {
+      padding: 40px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .demo-section {
+      background: white;
+      padding: 32px;
+      margin-bottom: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .demo-section h2 {
+      margin-top: 0;
+      color: #333;
+      border-bottom: 2px solid #2196f3;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .demo-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .demo-label {
+      font-size: 14px;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      background: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: #1976d2;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      margin: 0;
+      background: linear-gradient(135deg, #2196f3 0%, #9c27b0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: #666;
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    .code-block {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙 Toggle Dark Mode</button>
+
+  <div class="header">
+    <h1>AdyaUI (AUI)</h1>
+    <p>Framework-agnostic UI Component Library</p>
+  </div>
+
+  <!-- Button Variants -->
+  <div class="demo-section">
+    <h2>Button Variants</h2>
+    <div class="demo-grid">
+      <div class="demo-item">
+        <span class="demo-label">Primary</span>
+        <aui-button variant="primary">Primary Button</aui-button>
+      </div>
+      <div class="demo-item">
+        <span class="demo-label">Secondary</span>
+        <aui-button variant="secondary">Secondary Button</aui-button>
+      </div>
+      <div class="demo-item">
+        <span class="demo-label">Outlined</span>
+        <aui-button variant="outlined">Outlined Button</aui-button>
+      </div>
+      <div class="demo-item">
+        <span class="demo-label">Text</span>
+        <aui-button variant="text">Text Button</aui-button>
+      </div>
+    </div>
+
+    <div class="code-block">
+&lt;aui-button variant="primary"&gt;Primary Button&lt;/aui-button&gt;
+&lt;aui-button variant="secondary"&gt;Secondary Button&lt;/aui-button&gt;
+&lt;aui-button variant="outlined"&gt;Outlined Button&lt;/aui-button&gt;
+&lt;aui-button variant="text"&gt;Text Button&lt;/aui-button&gt;
+    </div>
+  </div>
+
+  <!-- Button Sizes -->
+  <div class="demo-section">
+    <h2>Button Sizes</h2>
+    <div class="demo-grid">
+      <div class="demo-item">
+        <span class="demo-label">Small</span>
+        <aui-button variant="primary" size="small">Small Button</aui-button>
+      </div>
+      <div class="demo-item">
+        <span class="demo-label">Medium (Default)</span>
+        <aui-button variant="primary" size="medium">Medium Button</aui-button>
+      </div>
+      <div class="demo-item">
+        <span class="demo-label">Large</span>
+        <aui-button variant="primary" size="large">Large Button</aui-button>
+      </div>
+    </div>
+
+    <div class="code-block">
+&lt;aui-button variant="primary" size="small"&gt;Small Button&lt;/aui-button&gt;
+&lt;aui-button variant="primary" size="medium"&gt;Medium Button&lt;/aui-button&gt;
+&lt;aui-button variant="primary" size="large"&gt;Large Button&lt;/aui-button&gt;
+    </div>
+  </div>
+
+  <!-- Button States -->
+  <div class="demo-section">
+    <h2>Button States</h2>
+    <div class="demo-grid">
+      <div class="demo-item">
+        <span class="demo-label">Normal</span>
+        <aui-button variant="primary">Normal Button</aui-button>
+      </div>
+      <div class="demo-item">
+        <span class="demo-label">Disabled</span>
+        <aui-button variant="primary" disabled>Disabled Button</aui-button>
+      </div>
+      <div class="demo-item">
+        <span class="demo-label">Loading</span>
+        <aui-button variant="primary" loading>Loading Button</aui-button>
+      </div>
+    </div>
+
+    <div class="code-block">
+&lt;aui-button variant="primary"&gt;Normal Button&lt;/aui-button&gt;
+&lt;aui-button variant="primary" disabled&gt;Disabled Button&lt;/aui-button&gt;
+&lt;aui-button variant="primary" loading&gt;Loading Button&lt;/aui-button&gt;
+    </div>
+  </div>
+
+  <!-- Event Handling -->
+  <div class="demo-section">
+    <h2>Event Handling</h2>
+    <div class="demo-grid">
+      <div class="demo-item">
+        <span class="demo-label">Click Event</span>
+        <aui-button variant="primary" id="clickButton">Click Me!</aui-button>
+      </div>
+    </div>
+    <p id="clickCount" style="margin-top: 16px; color: #666;">Click count: 0</p>
+
+    <div class="code-block">
+const button = document.querySelector('#clickButton');
+button.addEventListener('aui-click', (e) => {
+  console.log('Button clicked!', e.detail);
+});
+    </div>
+  </div>
+
+  <script type="module" src="/src/index.ts"></script>
+  <script>
+    // Theme toggle
+    let isDark = false;
+    function toggleTheme() {
+      isDark = !isDark;
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      document.querySelector('.theme-toggle').textContent = isDark ? '☀️ Toggle Light Mode' : '🌙 Toggle Dark Mode';
+      document.body.style.background = isDark ? '#1e1e1e' : '#f5f5f5';
+    }
+
+    // Event handling demo
+    let clickCount = 0;
+    const clickButton = document.querySelector('#clickButton');
+    const clickCountEl = document.querySelector('#clickCount');
+    
+    clickButton.addEventListener('aui-click', (e) => {
+      clickCount++;
+      clickCountEl.textContent = `Click count: ${clickCount}`;
+      console.log('Button clicked!', e.detail);
+    });
+  </script>
+</body>
+</html>

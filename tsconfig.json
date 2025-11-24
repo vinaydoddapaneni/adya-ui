@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    
+    "baseUrl": ".",
+    "paths": {
+      "@adyaui/core": ["./packages/core/src"],
+      "@adyaui/core/*": ["./packages/core/src/*"],
+      "@adyaui/react": ["./packages/react/src"],
+      "@adyaui/react/*": ["./packages/react/src/*"],
+      "@adyaui/vue": ["./packages/vue/src"],
+      "@adyaui/vue/*": ["./packages/vue/src/*"],
+      "@adyaui/theme": ["./packages/theme/src"],
+      "@adyaui/theme/*": ["./packages/theme/src/*"],
+      "@adyaui/utils": ["./packages/utils/src"],
+      "@adyaui/utils/*": ["./packages/utils/src/*"]
+    }
+  },
+  "include": ["packages/*/src"],
+  "exclude": ["node_modules", "dist", "**/dist", "**/node_modules"]
+}
