@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdyaAI - AI Component Advisor</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="8" fill="url(#gradient)" />
+            <path
+              d="M12 20L18 14L24 20L30 14"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12 26L18 20L24 26L30 20"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <defs>
+              <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#667eea" />
+                <stop offset="100%" stop-color="#764ba2" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div>
+            <h1>AdyaAI</h1>
+            <p>AI Component Advisor</p>
+          </div>
+        </div>
+        <div class="status" id="status">
+          <span class="status-dot"></span>
+          <span class="status-text">Checking...</span>
+        </div>
+      </header>
+
+      <!-- Mode Selector -->
+      <nav class="mode-selector">
+        <button class="mode-btn active" data-mode="suggest">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z" />
+          </svg>
+          Component Suggestion
+        </button>
+        <button class="mode-btn" data-mode="generate">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path
+              d="M3 4h14a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1zm1 2v8h12V6H4z"
+            />
+          </svg>
+          UI Generator
+        </button>
+        <button class="mode-btn" data-mode="theme">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 15V5a5 5 0 000 10z" />
+          </svg>
+          Theme Generator
+        </button>
+        <button class="mode-btn" data-mode="analyze">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M2 4h16v2H2V4zm0 5h16v2H2V9zm0 5h16v2H2v-2z" />
+          </svg>
+          Code Analyzer
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Suggest Mode -->
+        <div class="mode-panel active" id="suggest-panel">
+          <h2>Component Suggestion</h2>
+          <p class="subtitle">
+            Describe what you need, and I'll recommend the best AdyaUI components
+          </p>
+
+          <div class="input-group">
+            <label for="suggest-input">What do you want to build?</label>
+            <textarea
+              id="suggest-input"
+              placeholder="E.g., I need a form with email and password fields, and a submit button"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <button class="btn-primary" id="suggest-btn">
+            <span>Get Suggestions</span>
+            <svg class="spinner" width="20" height="20" viewBox="0 0 20 20">
+              <circle
+                cx="10"
+                cy="10"
+                r="8"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-dasharray="50"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+
+          <div class="result" id="suggest-result"></div>
+        </div>
+
+        <!-- Generate Mode -->
+        <div class="mode-panel" id="generate-panel">
+          <h2>UI Generator</h2>
+          <p class="subtitle">Describe a page or component, and I'll generate the complete HTML</p>
+
+          <div class="input-group">
+            <label for="generate-input">Describe the UI</label>
+            <textarea
+              id="generate-input"
+              placeholder="E.g., Create a login page with email, password, remember me checkbox, and login button"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <button class="btn-primary" id="generate-btn">
+            <span>Generate UI</span>
+            <svg class="spinner" width="20" height="20" viewBox="0 0 20 20">
+              <circle
+                cx="10"
+                cy="10"
+                r="8"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-dasharray="50"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+
+          <div class="result" id="generate-result"></div>
+        </div>
+
+        <!-- Theme Mode -->
+        <div class="mode-panel" id="theme-panel">
+          <h2>Theme Generator</h2>
+          <p class="subtitle">Describe your desired theme, and I'll create custom CSS variables</p>
+
+          <div class="input-group">
+            <label for="theme-input">Describe the theme</label>
+            <textarea
+              id="theme-input"
+              placeholder="E.g., Create a dark theme with purple accents and modern gradients"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <button class="btn-primary" id="theme-btn">
+            <span>Generate Theme</span>
+            <svg class="spinner" width="20" height="20" viewBox="0 0 20 20">
+              <circle
+                cx="10"
+                cy="10"
+                r="8"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-dasharray="50"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+
+          <div class="result" id="theme-result"></div>
+        </div>
+
+        <!-- Analyze Mode -->
+        <div class="mode-panel" id="analyze-panel">
+          <h2>Code Analyzer</h2>
+          <p class="subtitle">Paste your AdyaUI code for analysis and improvement suggestions</p>
+
+          <div class="input-group">
+            <label for="analyze-input">Your Code</label>
+            <textarea
+              id="analyze-input"
+              placeholder="Paste your HTML code using AdyaUI components here..."
+              rows="8"
+            ></textarea>
+          </div>
+
+          <div class="button-group">
+            <button class="btn-primary" id="analyze-btn">
+              <span>Analyze Code</span>
+              <svg class="spinner" width="20" height="20" viewBox="0 0 20 20">
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-dasharray="50"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <button class="btn-secondary" id="improve-btn">
+              <span>Improve Code</span>
+              <svg class="spinner" width="20" height="20" viewBox="0 0 20 20">
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-dasharray="50"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="result" id="analyze-result"></div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Powered by <strong>Ollama</strong> + <strong>DeepSeek-R1</strong></p>
+        <p>AdyaUI Component Library</p>
+      </footer>
+    </div>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>
