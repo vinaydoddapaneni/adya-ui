@@ -255,6 +255,82 @@ table.addEventListener('aui-sort', (e) => {
       </div>
     </div>
 
+    <!-- Premium Table Variants -->
+    <div class="demo-section">
+      <h2>🌟 Premium Table Variants - Unique to AdyaUI</h2>
+      
+      <h3>Glass Morphism</h3>
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; border-radius: 16px;">
+        <aui-table id="glassTable" variant="glass" striped hoverable></aui-table>
+      </div>
+
+      <h3 style="margin-top: 32px;">Neon Glow (Cyberpunk)</h3>
+      <aui-table id="neonTable" variant="neon" hoverable></aui-table>
+
+      <h3 style="margin-top: 32px;">Gradient Card</h3>
+      <aui-table id="gradientTable" variant="gradient-card" striped hoverable></aui-table>
+
+      <h3 style="margin-top: 32px;">Minimal Elegant</h3>
+      <aui-table id="minimalTable" variant="minimal" hoverable></aui-table>
+
+      <h3 style="margin-top: 32px;">Animated Gradient</h3>
+      <aui-table id="animatedTable" variant="animated" striped hoverable></aui-table>
+
+      <h3 style="margin-top: 32px;">Neumorphism</h3>
+      <div style="background: #e0e5ec; padding: 40px; border-radius: 16px;">
+        <aui-table id="neomorphicTable" variant="neomorphic" hoverable></aui-table>
+      </div>
+
+      <h3 style="margin-top: 32px;">Premium Dark</h3>
+      <aui-table id="premiumDarkTable" variant="premium-dark" striped hoverable></aui-table>
+
+      <h3 style="margin-top: 32px;">Colorful</h3>
+      <aui-table id="colorfulTable" variant="colorful" striped hoverable></aui-table>
+
+      <h3 style="margin-top: 32px;">Hover Effects</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <div>
+          <h4>Glow Effect</h4>
+          <aui-table id="glowTable" hover-effect="glow" striped></aui-table>
+        </div>
+        <div>
+          <h4>Lift Effect</h4>
+          <aui-table id="liftTable" hover-effect="lift" striped></aui-table>
+        </div>
+        <div>
+          <h4>Slide Effect</h4>
+          <aui-table id="slideTable" hover-effect="slide" striped></aui-table>
+        </div>
+      </div>
+
+      <div class="code-block">
+// Premium Variants
+&lt;aui-table variant="glass"&gt;&lt;/aui-table&gt;
+&lt;aui-table variant="neon"&gt;&lt;/aui-table&gt;
+&lt;aui-table variant="gradient-card"&gt;&lt;/aui-table&gt;
+&lt;aui-table variant="minimal"&gt;&lt;/aui-table&gt;
+&lt;aui-table variant="animated"&gt;&lt;/aui-table&gt;
+&lt;aui-table variant="neomorphic"&gt;&lt;/aui-table&gt;
+&lt;aui-table variant="premium-dark"&gt;&lt;/aui-table&gt;
+&lt;aui-table variant="colorful"&gt;&lt;/aui-table&gt;
+
+// Hover Effects
+&lt;aui-table hover-effect="glow"&gt;&lt;/aui-table&gt;
+&lt;aui-table hover-effect="lift"&gt;&lt;/aui-table&gt;
+&lt;aui-table hover-effect="slide"&gt;&lt;/aui-table&gt;
+
+// With Status Badges (use custom render)
+columns: [{
+  key: 'status',
+  label: 'Status',
+  render: (value) => {
+    const type = value === 'Active' ? 'success' : 'neutral';
+    return `&lt;span class="aui-badge ${type}"&gt;${value}&lt;/span&gt;`;
+  }
+}]
+      </div>
+    </div>
+
     <script type="module" src="/src/index.ts"></script>
     <script>
       // Theme toggle
@@ -342,6 +418,21 @@ table.addEventListener('aui-sort', (e) => {
             selectedInfo.textContent = `Selected ${count} row${count !== 1 ? 's' : ''}`;
           });
         }
+
+        // Initialize premium variant tables
+        const variantIds = [
+          'glassTable', 'neonTable', 'gradientTable', 'minimalTable',
+          'animatedTable', 'neomorphicTable', 'premiumDarkTable', 'colorfulTable',
+          'glowTable', 'liftTable', 'slideTable'
+        ];
+
+        variantIds.forEach(id => {
+          const table = document.querySelector(`#${id}`);
+          if (table) {
+            table.columns = sampleColumns;
+            table.data = sampleData.slice(0, 4);
+          }
+        });
       });
     </script>
   </body>
