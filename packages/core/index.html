@@ -279,62 +279,70 @@ table.addEventListener('aui-sort', (e) => {
         console.log('Button clicked!', e.detail);
       });
 
-      // Table demos
-      const sampleColumns = [
-        { key: 'name', label: 'Name', sortable: true },
-        { key: 'age', label: 'Age', sortable: true, align: 'right' },
-        { key: 'email', label: 'Email' },
-        { key: 'role', label: 'Role' }
-      ];
+      // Table demos - Wait for custom element to be defined
+      customElements.whenDefined('aui-table').then(() => {
+        const sampleColumns = [
+          { key: 'name', label: 'Name', sortable: true },
+          { key: 'position', label: 'Position', sortable: true },
+          { key: 'department', label: 'Department', sortable: true },
+          { key: 'email', label: 'Email' },
+          { key: 'salary', label: 'Salary', sortable: true, align: 'right' }
+        ];
 
-      const sampleData = [
-        { name: 'John Doe', age: 30, email: 'john@example.com', role: 'Developer' },
-        { name: 'Jane Smith', age: 25, email: 'jane@example.com', role: 'Designer' },
-        { name: 'Bob Johnson', age: 35, email: 'bob@example.com', role: 'Manager' },
-        { name: 'Alice Williams', age: 28, email: 'alice@example.com', role: 'Developer' },
-        { name: 'Charlie Brown', age: 32, email: 'charlie@example.com', role: 'Designer' },
-        { name: 'Diana Prince', age: 29, email: 'diana@example.com', role: 'Developer' },
-        { name: 'Eve Davis', age: 31, email: 'eve@example.com', role: 'Manager' },
-        { name: 'Frank Miller', age: 27, email: 'frank@example.com', role: 'Developer' },
-        { name: 'Grace Lee', age: 33, email: 'grace@example.com', role: 'Designer' },
-        { name: 'Henry Wilson', age: 26, email: 'henry@example.com', role: 'Developer' }
-      ];
+        const sampleData = [
+          { name: 'Sarah Johnson', position: 'Senior Developer', department: 'Engineering', email: 'sarah.j@company.com', salary: '$125,000' },
+          { name: 'Michael Chen', position: 'Product Manager', department: 'Product', email: 'michael.c@company.com', salary: '$135,000' },
+          { name: 'Emily Rodriguez', position: 'UX Designer', department: 'Design', email: 'emily.r@company.com', salary: '$95,000' },
+          { name: 'David Kim', position: 'DevOps Engineer', department: 'Engineering', email: 'david.k@company.com', salary: '$115,000' },
+          { name: 'Jessica Martinez', position: 'Marketing Director', department: 'Marketing', email: 'jessica.m@company.com', salary: '$145,000' },
+          { name: 'Robert Taylor', position: 'Data Analyst', department: 'Analytics', email: 'robert.t@company.com', salary: '$85,000' },
+          { name: 'Amanda White', position: 'HR Manager', department: 'Human Resources', email: 'amanda.w@company.com', salary: '$105,000' },
+          { name: 'James Anderson', position: 'Sales Lead', department: 'Sales', email: 'james.a@company.com', salary: '$110,000' },
+          { name: 'Lisa Thompson', position: 'QA Engineer', department: 'Engineering', email: 'lisa.t@company.com', salary: '$90,000' },
+          { name: 'Christopher Lee', position: 'Backend Developer', department: 'Engineering', email: 'chris.l@company.com', salary: '$120,000' },
+          { name: 'Maria Garcia', position: 'Content Strategist', department: 'Marketing', email: 'maria.g@company.com', salary: '$88,000' },
+          { name: 'Daniel Brown', position: 'Security Specialist', department: 'IT Security', email: 'daniel.b@company.com', salary: '$130,000' },
+          { name: 'Jennifer Davis', position: 'Scrum Master', department: 'Engineering', email: 'jennifer.d@company.com', salary: '$100,000' },
+          { name: 'William Miller', position: 'Frontend Developer', department: 'Engineering', email: 'william.m@company.com', salary: '$105,000' },
+          { name: 'Patricia Wilson', position: 'Business Analyst', department: 'Operations', email: 'patricia.w@company.com', salary: '$92,000' }
+        ];
 
-      // Initialize tables
-      const basicTable = document.querySelector('#basicTable');
-      if (basicTable) {
-        basicTable.columns = sampleColumns;
-        basicTable.data = sampleData.slice(0, 5);
-      }
+        // Initialize tables
+        const basicTable = document.querySelector('#basicTable');
+        if (basicTable) {
+          basicTable.columns = sampleColumns;
+          basicTable.data = sampleData.slice(0, 6);
+        }
 
-      const sortableTable = document.querySelector('#sortableTable');
-      if (sortableTable) {
-        sortableTable.columns = sampleColumns;
-        sortableTable.data = sampleData.slice(0, 5);
-        sortableTable.addEventListener('aui-sort', (e) => {
-          console.log('Table sorted:', e.detail);
-        });
-      }
+        const sortableTable = document.querySelector('#sortableTable');
+        if (sortableTable) {
+          sortableTable.columns = sampleColumns;
+          sortableTable.data = sampleData.slice(0, 6);
+          sortableTable.addEventListener('aui-sort', (e) => {
+            console.log('Table sorted:', e.detail);
+          });
+        }
 
-      const paginatedTable = document.querySelector('#paginatedTable');
-      if (paginatedTable) {
-        paginatedTable.columns = sampleColumns;
-        paginatedTable.data = sampleData;
-        paginatedTable.addEventListener('aui-page-change', (e) => {
-          console.log('Page changed:', e.detail);
-        });
-      }
+        const paginatedTable = document.querySelector('#paginatedTable');
+        if (paginatedTable) {
+          paginatedTable.columns = sampleColumns;
+          paginatedTable.data = sampleData;
+          paginatedTable.addEventListener('aui-page-change', (e) => {
+            console.log('Page changed:', e.detail);
+          });
+        }
 
-      const selectableTable = document.querySelector('#selectableTable');
-      const selectedInfo = document.querySelector('#selectedInfo');
-      if (selectableTable) {
-        selectableTable.columns = sampleColumns;
-        selectableTable.data = sampleData.slice(0, 5);
-        selectableTable.addEventListener('aui-select', (e) => {
-          const count = e.detail.selectedRows.length;
-          selectedInfo.textContent = `Selected ${count} row${count !== 1 ? 's' : ''}`;
-        });
-      }
+        const selectableTable = document.querySelector('#selectableTable');
+        const selectedInfo = document.querySelector('#selectedInfo');
+        if (selectableTable) {
+          selectableTable.columns = sampleColumns;
+          selectableTable.data = sampleData.slice(0, 6);
+          selectableTable.addEventListener('aui-select', (e) => {
+            const count = e.detail.selectedRows.length;
+            selectedInfo.textContent = `Selected ${count} row${count !== 1 ? 's' : ''}`;
+          });
+        }
+      });
     </script>
   </body>
 </html>
