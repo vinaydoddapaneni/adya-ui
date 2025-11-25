@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![AdyaUI Logo](https://via.placeholder.com/200x200/2196F3/FFFFFF?text=AUI)
+<img src="./packages/core/src/assets/logo.png" alt="AdyaUI Logo" width="200"/>
 
 **A beautiful, accessible, and framework-agnostic UI component library**
 
