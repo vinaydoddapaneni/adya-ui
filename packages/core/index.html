@@ -3,333 +3,540 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AdyaUI Demo - Button Component</title>
+    <title>AdyaUI - Modern Component Library</title>
     <link rel="icon" type="image/png" href="/src/assets/favicon.png" />
     <style>
-      body {
-        padding: 40px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background: #f5f5f5;
-      }
-
-      .demo-section {
-        background: white;
-        padding: 32px;
-        margin-bottom: 24px;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .demo-section h2 {
-        margin-top: 0;
-        color: #333;
-        border-bottom: 2px solid #2196f3;
-        padding-bottom: 8px;
-        margin-bottom: 24px;
-      }
-
-      .demo-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 16px;
-        margin-bottom: 16px;
-      }
-
-      .demo-item {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        align-items: flex-start;
-      }
-
-      .demo-label {
-        font-size: 14px;
-        color: #666;
-        font-weight: 500;
-      }
-
-      .theme-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 12px 24px;
-        background: #2196f3;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-      }
-
-      .theme-toggle:hover {
-        background: #1976d2;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-      }
-
-      .header {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .header-logo {
-        max-width: 200px;
-        height: auto;
-        margin: 0 auto 20px;
-        display: block;
-      }
-
-      .header h1 {
-        font-size: 48px;
+      * {
         margin: 0;
-        background: linear-gradient(135deg, #2196f3 0%, #9c27b0 100%);
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #3b82f6;
+        --primary-dark: #2563eb;
+        --secondary: #8b5cf6;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --error: #ef4444;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-300: #d1d5db;
+        --gray-400: #9ca3af;
+        --gray-500: #6b7280;
+        --gray-600: #4b5563;
+        --gray-700: #374151;
+        --gray-800: #1f2937;
+        --gray-900: #111827;
+        --sidebar-width: 280px;
+        --header-height: 70px;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        background: var(--gray-50);
+        color: var(--gray-900);
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background: white;
+        border-bottom: 1px solid var(--gray-200);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 32px;
+        z-index: 1000;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .logo {
+        height: 40px;
+        width: auto;
+      }
+
+      .header-title {
+        font-size: 24px;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
 
-      .header p {
-        color: #666;
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .theme-toggle {
+        padding: 10px 20px;
+        background: var(--gray-100);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.2s;
+        color: var(--gray-700);
+      }
+
+      .theme-toggle:hover {
+        background: var(--gray-200);
+      }
+
+      .github-link {
+        padding: 10px 20px;
+        background: var(--gray-900);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.2s;
+      }
+
+      .github-link:hover {
+        background: var(--gray-800);
+        transform: translateY(-1px);
+      }
+
+      /* Sidebar */
+      .sidebar {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: var(--sidebar-width);
+        height: calc(100vh - var(--header-height));
+        background: white;
+        border-right: 1px solid var(--gray-200);
+        overflow-y: auto;
+        padding: 24px 0;
+        z-index: 100;
+      }
+
+      .sidebar-section {
+        margin-bottom: 24px;
+      }
+
+      .sidebar-section-title {
+        padding: 0 24px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--gray-500);
+        margin-bottom: 8px;
+      }
+
+      .sidebar-link {
+        display: flex;
+        align-items: center;
+        padding: 10px 24px;
+        color: var(--gray-700);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s;
+        border-left: 3px solid transparent;
+      }
+
+      .sidebar-link:hover {
+        background: var(--gray-50);
+        color: var(--primary);
+      }
+
+      .sidebar-link.active {
+        background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent);
+        color: var(--primary);
+        border-left-color: var(--primary);
+        font-weight: 600;
+      }
+
+      .sidebar-link-icon {
+        margin-right: 12px;
         font-size: 18px;
-        margin-top: 8px;
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-left: var(--sidebar-width);
+        margin-top: var(--header-height);
+        padding: 40px;
+        max-width: 1400px;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        border-radius: 16px;
+        padding: 60px;
+        color: white;
+        margin-bottom: 40px;
+        box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 16px;
+        font-weight: 800;
+      }
+
+      .hero p {
+        font-size: 20px;
+        opacity: 0.95;
+        max-width: 600px;
+      }
+
+      .component-section {
+        background: white;
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 24px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--gray-200);
+      }
+
+      .component-section h2 {
+        font-size: 28px;
+        margin-bottom: 8px;
+        color: var(--gray-900);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .component-section-subtitle {
+        color: var(--gray-600);
+        font-size: 16px;
+        margin-bottom: 32px;
+      }
+
+      .component-demo {
+        margin-bottom: 32px;
+      }
+
+      .demo-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--gray-800);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .demo-preview {
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
+        border-radius: 8px;
+        padding: 32px;
+        margin-bottom: 16px;
+      }
+
+      .code-block-container {
+        position: relative;
+        margin-bottom: 16px;
       }
 
       .code-block {
-        background: #1e1e1e;
-        color: #d4d4d4;
-        padding: 16px;
+        background: var(--gray-900);
+        color: #e0e0e0;
+        padding: 20px;
         border-radius: 8px;
         font-family: 'Courier New', monospace;
-        font-size: 14px;
+        font-size: 13px;
         overflow-x: auto;
-        margin-top: 16px;
+        line-height: 1.6;
       }
+
+      .copy-button {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        transition: all 0.2s;
+      }
+
+      .copy-button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .copy-button.copied {
+        background: var(--success);
+        border-color: var(--success);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .badge.new {
+        background: linear-gradient(135deg, var(--success), #059669);
+        color: white;
+      }
+
+      .badge.beta {
+        background: linear-gradient(135deg, var(--warning), #d97706);
+        color: white;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s;
+        }
+
+        .sidebar.open {
+          transform: translateX(0);
+        }
+
+        .main-content {
+          margin-left: 0;
+        }
+
+        .hero {
+          padding: 40px 32px;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          padding: 0 16px;
+        }
+
+        .main-content {
+          padding: 24px 16px;
+        }
+
+        .component-section {
+          padding: 24px 16px;
+        }
+
+        .demo-preview {
+          padding: 24px 16px;
+        }
+      }
+
+      /* Syntax Highlighting */
+      .code-block .keyword { color: #c678dd; }
+      .code-block .string { color: #98c379; }
+      .code-block .comment { color: #5c6370; font-style: italic; }
+      .code-block .function { color: #61afef; }
+      .code-block .tag { color: #e06c75; }
+      .code-block .attr { color: #d19a66; }
     </style>
   </head>
   <body>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙 Toggle Dark Mode</button>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <img src="/src/assets/logo-icon.png" alt="AdyaUI" class="logo" />
+        <h1 class="header-title">AdyaUI</h1>
+      </div>
+      <div class="header-right">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+        <a href="https://github.com/vinaydoddapaneni/adya-ui" class="github-link" target="_blank">
+          ⭐ GitHub
+        </a>
+      </div>
+    </header>
 
-    <div class="header">
-      <img src="/src/assets/logo.png" alt="AdyaUI Logo" class="header-logo" />
-      <h1>AdyaUI (AUI)</h1>
-      <p>Framework-agnostic UI Component Library</p>
-    </div>
-
-    <!-- Button Variants -->
-    <div class="demo-section">
-      <h2>Button Variants</h2>
-      <div class="demo-grid">
-        <div class="demo-item">
-          <span class="demo-label">Primary</span>
-          <aui-button variant="primary">Primary Button</aui-button>
-        </div>
-        <div class="demo-item">
-          <span class="demo-label">Secondary</span>
-          <aui-button variant="secondary">Secondary Button</aui-button>
-        </div>
-        <div class="demo-item">
-          <span class="demo-label">Outlined</span>
-          <aui-button variant="outlined">Outlined Button</aui-button>
-        </div>
-        <div class="demo-item">
-          <span class="demo-label">Text</span>
-          <aui-button variant="text">Text Button</aui-button>
-        </div>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Getting Started</div>
+        <a href="#introduction" class="sidebar-link active">
+          <span class="sidebar-link-icon">🏠</span>
+          Introduction
+        </a>
+        <a href="#installation" class="sidebar-link">
+          <span class="sidebar-link-icon">📦</span>
+          Installation
+        </a>
       </div>
 
-      <div class="code-block">
-        &lt;aui-button variant="primary"&gt;Primary Button&lt;/aui-button&gt; &lt;aui-button
-        variant="secondary"&gt;Secondary Button&lt;/aui-button&gt; &lt;aui-button
-        variant="outlined"&gt;Outlined Button&lt;/aui-button&gt; &lt;aui-button
-        variant="text"&gt;Text Button&lt;/aui-button&gt;
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Components</div>
+        <a href="#button" class="sidebar-link">
+          <span class="sidebar-link-icon">🔘</span>
+          Button
+        </a>
+        <a href="#table" class="sidebar-link">
+          <span class="sidebar-link-icon">📊</span>
+          Table
+        </a>
+        <a href="#typography" class="sidebar-link">
+          <span class="sidebar-link-icon">📝</span>
+          Typography
+        </a>
+        <a href="#card" class="sidebar-link">
+          <span class="sidebar-link-icon">🎴</span>
+          Card
+        </a>
+        <a href="#textfield" class="sidebar-link">
+          <span class="sidebar-link-icon">✏️</span>
+          Text Field
+        </a>
+        <a href="#checkbox" class="sidebar-link">
+          <span class="sidebar-link-icon">☑️</span>
+          Checkbox
+        </a>
+        <a href="#switch" class="sidebar-link">
+          <span class="sidebar-link-icon">🔄</span>
+          Switch
+        </a>
+        <a href="#alert" class="sidebar-link">
+          <span class="sidebar-link-icon">⚠️</span>
+          Alert
+        </a>
       </div>
-    </div>
 
-    <!-- Button Sizes -->
-    <div class="demo-section">
-      <h2>Button Sizes</h2>
-      <div class="demo-grid">
-        <div class="demo-item">
-          <span class="demo-label">Small</span>
-          <aui-button variant="primary" size="small">Small Button</aui-button>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Premium</div>
+        <a href="#table-variants" class="sidebar-link">
+          <span class="sidebar-link-icon">✨</span>
+          Table Variants
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero -->
+      <div class="hero">
+        <h1>AdyaUI Component Library</h1>
+        <p>Modern, framework-agnostic web components with premium styling and animations. Build beautiful UIs faster.</p>
+      </div>
+
+      <!-- Introduction -->
+      <section id="introduction" class="component-section">
+        <h2>🏠 Introduction</h2>
+        <p class="component-section-subtitle">Welcome to AdyaUI - a modern component library built with Web Components</p>
+        
+        <div class="component-demo">
+          <p style="font-size: 16px; line-height: 1.8; color: var(--gray-700);">
+            AdyaUI is a framework-agnostic UI component library that works with any JavaScript framework or vanilla JS. 
+            Built with modern Web Components, it offers premium styling, smooth animations, and extensive customization options.
+          </p>
         </div>
-        <div class="demo-item">
-          <span class="demo-label">Medium (Default)</span>
-          <aui-button variant="primary" size="medium">Medium Button</aui-button>
+      </section>
+
+      <!-- Installation -->
+      <section id="installation" class="component-section">
+        <h2>📦 Installation</h2>
+        <p class="component-section-subtitle">Get started with AdyaUI in seconds</p>
+        
+        <div class="component-demo">
+          <div class="demo-title">NPM</div>
+          <div class="code-block-container">
+            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+            <pre class="code-block">npm install @adyaui/core</pre>
+          </div>
         </div>
-        <div class="demo-item">
-          <span class="demo-label">Large</span>
-          <aui-button variant="primary" size="large">Large Button</aui-button>
+
+        <div class="component-demo">
+          <div class="demo-title">Import in your project</div>
+          <div class="code-block-container">
+            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+            <pre class="code-block"><span class="keyword">import</span> <span class="string">'@adyaui/core'</span>;</pre>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="code-block">
-        &lt;aui-button variant="primary" size="small"&gt;Small Button&lt;/aui-button&gt;
-        &lt;aui-button variant="primary" size="medium"&gt;Medium Button&lt;/aui-button&gt;
-        &lt;aui-button variant="primary" size="large"&gt;Large Button&lt;/aui-button&gt;
-      </div>
-    </div>
-
-    <!-- Button States -->
-    <div class="demo-section">
-      <h2>Button States</h2>
-      <div class="demo-grid">
-        <div class="demo-item">
-          <span class="demo-label">Normal</span>
-          <aui-button variant="primary">Normal Button</aui-button>
+      <!-- Button Component -->
+      <section id="button" class="component-section">
+        <h2>🔘 Button <span class="badge new">Stable</span></h2>
+        <p class="component-section-subtitle">Versatile button component with multiple variants and sizes</p>
+        
+        <div class="component-demo">
+          <div class="demo-title">Variants</div>
+          <div class="demo-preview">
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <aui-button variant="primary">Primary</aui-button>
+              <aui-button variant="secondary">Secondary</aui-button>
+              <aui-button variant="outlined">Outlined</aui-button>
+              <aui-button variant="text">Text</aui-button>
+            </div>
+          </div>
+          <div class="code-block-container">
+            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+            <pre class="code-block"><span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"primary"</span><span class="tag">&gt;</span>Primary<span class="tag">&lt;/aui-button&gt;</span>
+<span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"secondary"</span><span class="tag">&gt;</span>Secondary<span class="tag">&lt;/aui-button&gt;</span>
+<span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"outlined"</span><span class="tag">&gt;</span>Outlined<span class="tag">&lt;/aui-button&gt;</span>
+<span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"text"</span><span class="tag">&gt;</span>Text<span class="tag">&lt;/aui-button&gt;</span></pre>
+          </div>
         </div>
-        <div class="demo-item">
-          <span class="demo-label">Disabled</span>
-          <aui-button variant="primary" disabled>Disabled Button</aui-button>
+
+        <div class="component-demo">
+          <div class="demo-title">Sizes</div>
+          <div class="demo-preview">
+            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+              <aui-button variant="primary" size="small">Small</aui-button>
+              <aui-button variant="primary" size="medium">Medium</aui-button>
+              <aui-button variant="primary" size="large">Large</aui-button>
+            </div>
+          </div>
+          <div class="code-block-container">
+            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+            <pre class="code-block"><span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"primary"</span> <span class="attr">size</span>=<span class="string">"small"</span><span class="tag">&gt;</span>Small<span class="tag">&lt;/aui-button&gt;</span>
+<span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"primary"</span> <span class="attr">size</span>=<span class="string">"medium"</span><span class="tag">&gt;</span>Medium<span class="tag">&lt;/aui-button&gt;</span>
+<span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"primary"</span> <span class="attr">size</span>=<span class="string">"large"</span><span class="tag">&gt;</span>Large<span class="tag">&lt;/aui-button&gt;</span></pre>
+          </div>
         </div>
-        <div class="demo-item">
-          <span class="demo-label">Loading</span>
-          <aui-button variant="primary" loading>Loading Button</aui-button>
+
+        <div class="component-demo">
+          <div class="demo-title">States</div>
+          <div class="demo-preview">
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <aui-button variant="primary">Normal</aui-button>
+              <aui-button variant="primary" disabled>Disabled</aui-button>
+              <aui-button variant="primary" loading>Loading</aui-button>
+            </div>
+          </div>
+          <div class="code-block-container">
+            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+            <pre class="code-block"><span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"primary"</span><span class="tag">&gt;</span>Normal<span class="tag">&lt;/aui-button&gt;</span>
+<span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"primary"</span> <span class="attr">disabled</span><span class="tag">&gt;</span>Disabled<span class="tag">&lt;/aui-button&gt;</span>
+<span class="tag">&lt;aui-button</span> <span class="attr">variant</span>=<span class="string">"primary"</span> <span class="attr">loading</span><span class="tag">&gt;</span>Loading<span class="tag">&lt;/aui-button&gt;</span></pre>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="code-block">
-        &lt;aui-button variant="primary"&gt;Normal Button&lt;/aui-button&gt; &lt;aui-button
-        variant="primary" disabled&gt;Disabled Button&lt;/aui-button&gt; &lt;aui-button
-        variant="primary" loading&gt;Loading Button&lt;/aui-button&gt;
-      </div>
-    </div>
-
-    <!-- Event Handling -->
-    <div class="demo-section">
-      <h2>Event Handling</h2>
-      <div class="demo-grid">
-        <div class="demo-item">
-          <span class="demo-label">Click Event</span>
-          <aui-button variant="primary" id="clickButton">Click Me!</aui-button>
-        </div>
-      </div>
-      <p id="clickCount" style="margin-top: 16px; color: #666">Click count: 0</p>
-
-      <div class="code-block">
-        const button = document.querySelector('#clickButton'); button.addEventListener('aui-click',
-        (e) => { console.log('Button clicked!', e.detail); });
-      </div>
-    </div>
-
-    <!-- Table Component -->
-    <div class="demo-section">
-      <h2>Table Component</h2>
-      
-      <h3>Basic Table</h3>
-      <aui-table id="basicTable" striped hoverable></aui-table>
-
-      <h3 style="margin-top: 32px;">Sortable Table</h3>
-      <aui-table id="sortableTable" sortable striped hoverable></aui-table>
-
-      <h3 style="margin-top: 32px;">Paginated Table</h3>
-      <aui-table id="paginatedTable" paginated page-size="5" striped hoverable></aui-table>
-
-      <h3 style="margin-top: 32px;">Selectable Table</h3>
-      <aui-table id="selectableTable" selectable striped hoverable></aui-table>
-      <p id="selectedInfo" style="margin-top: 16px; color: #666;"></p>
-
-      <div class="code-block">
-// Basic usage
-const table = document.querySelector('#basicTable');
-table.columns = [
-  { key: 'name', label: 'Name', sortable: true },
-  { key: 'age', label: 'Age', sortable: true, align: 'right' },
-  { key: 'email', label: 'Email' }
-];
-table.data = [
-  { name: 'John Doe', age: 30, email: 'john@example.com' },
-  { name: 'Jane Smith', age: 25, email: 'jane@example.com' }
-];
-
-// With attributes
-&lt;aui-table paginated page-size="10" striped hoverable&gt;&lt;/aui-table&gt;
-&lt;aui-table selectable sortable striped&gt;&lt;/aui-table&gt;
-
-// Listen to events
-table.addEventListener('aui-sort', (e) => {
-  console.log('Sorted:', e.detail.column, e.detail.direction);
-});
-      </div>
-    </div>
-
-    <!-- Premium Table Variants -->
-    <div class="demo-section">
-      <h2>🌟 Premium Table Variants - Unique to AdyaUI</h2>
-      
-      <h3>Glass Morphism</h3>
-      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; border-radius: 16px;">
-        <aui-table id="glassTable" variant="glass" striped hoverable></aui-table>
-      </div>
-
-      <h3 style="margin-top: 32px;">Neon Glow (Cyberpunk)</h3>
-      <aui-table id="neonTable" variant="neon" hoverable></aui-table>
-
-      <h3 style="margin-top: 32px;">Gradient Card</h3>
-      <aui-table id="gradientTable" variant="gradient-card" striped hoverable></aui-table>
-
-      <h3 style="margin-top: 32px;">Minimal Elegant</h3>
-      <aui-table id="minimalTable" variant="minimal" hoverable></aui-table>
-
-      <h3 style="margin-top: 32px;">Animated Gradient</h3>
-      <aui-table id="animatedTable" variant="animated" striped hoverable></aui-table>
-
-      <h3 style="margin-top: 32px;">Neumorphism</h3>
-      <div style="background: #e0e5ec; padding: 40px; border-radius: 16px;">
-        <aui-table id="neomorphicTable" variant="neomorphic" hoverable></aui-table>
-      </div>
-
-      <h3 style="margin-top: 32px;">Premium Dark</h3>
-      <aui-table id="premiumDarkTable" variant="premium-dark" striped hoverable></aui-table>
-
-      <h3 style="margin-top: 32px;">Colorful</h3>
-      <aui-table id="colorfulTable" variant="colorful" striped hoverable></aui-table>
-
-      <h3 style="margin-top: 32px;">Hover Effects</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        <div>
-          <h4>Glow Effect</h4>
-          <aui-table id="glowTable" hover-effect="glow" striped></aui-table>
-        </div>
-        <div>
-          <h4>Lift Effect</h4>
-          <aui-table id="liftTable" hover-effect="lift" striped></aui-table>
-        </div>
-        <div>
-          <h4>Slide Effect</h4>
-          <aui-table id="slideTable" hover-effect="slide" striped></aui-table>
-        </div>
-      </div>
-
-      <div class="code-block">
-// Premium Variants
-&lt;aui-table variant="glass"&gt;&lt;/aui-table&gt;
-&lt;aui-table variant="neon"&gt;&lt;/aui-table&gt;
-&lt;aui-table variant="gradient-card"&gt;&lt;/aui-table&gt;
-&lt;aui-table variant="minimal"&gt;&lt;/aui-table&gt;
-&lt;aui-table variant="animated"&gt;&lt;/aui-table&gt;
-&lt;aui-table variant="neomorphic"&gt;&lt;/aui-table&gt;
-&lt;aui-table variant="premium-dark"&gt;&lt;/aui-table&gt;
-&lt;aui-table variant="colorful"&gt;&lt;/aui-table&gt;
-
-// Hover Effects
-&lt;aui-table hover-effect="glow"&gt;&lt;/aui-table&gt;
-&lt;aui-table hover-effect="lift"&gt;&lt;/aui-table&gt;
-&lt;aui-table hover-effect="slide"&gt;&lt;/aui-table&gt;
-
-// With Status Badges (use custom render)
-columns: [{
-  key: 'status',
-  label: 'Status',
-  render: (value) => {
-    const type = value === 'Active' ? 'success' : 'neutral';
-    return `&lt;span class="aui-badge ${type}"&gt;${value}&lt;/span&gt;`;
-  }
-}]
-      </div>
-    </div>
+      <!-- Continue with more components... -->
+      <p style="text-align: center; color: var(--gray-500); margin: 60px 0;">More components coming soon...</p>
+    </main>
 
     <script type="module" src="/src/index.ts"></script>
     <script>
@@ -339,98 +546,53 @@ columns: [{
         isDark = !isDark;
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
         document.querySelector('.theme-toggle').textContent = isDark
-          ? '☀️ Toggle Light Mode'
-          : '🌙 Toggle Dark Mode';
-        document.body.style.background = isDark ? '#1e1e1e' : '#f5f5f5';
+          ? '☀️ Light Mode'
+          : '🌙 Dark Mode';
       }
 
-      // Event handling demo
-      let clickCount = 0;
-      const clickButton = document.querySelector('#clickButton');
-      const clickCountEl = document.querySelector('#clickCount');
+      // Copy code functionality
+      function copyCode(button) {
+        const codeBlock = button.nextElementSibling;
+        const code = codeBlock.textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          button.textContent = 'Copied!';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.textContent = 'Copy';
+            button.classList.remove('copied');
+          }, 2000);
+        });
+      }
 
-      clickButton.addEventListener('aui-click', e => {
-        clickCount++;
-        clickCountEl.textContent = `Click count: ${clickCount}`;
-        console.log('Button clicked!', e.detail);
+      // Active sidebar link on scroll
+      const sections = document.querySelectorAll('.component-section');
+      const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        sidebarLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
       });
 
-      // Table demos - Wait for custom element to be defined
-      customElements.whenDefined('aui-table').then(() => {
-        const sampleColumns = [
-          { key: 'name', label: 'Name', sortable: true },
-          { key: 'position', label: 'Position', sortable: true },
-          { key: 'department', label: 'Department', sortable: true },
-          { key: 'email', label: 'Email' },
-          { key: 'salary', label: 'Salary', sortable: true, align: 'right' }
-        ];
-
-        const sampleData = [
-          { name: 'Sarah Johnson', position: 'Senior Developer', department: 'Engineering', email: 'sarah.j@company.com', salary: '$125,000' },
-          { name: 'Michael Chen', position: 'Product Manager', department: 'Product', email: 'michael.c@company.com', salary: '$135,000' },
-          { name: 'Emily Rodriguez', position: 'UX Designer', department: 'Design', email: 'emily.r@company.com', salary: '$95,000' },
-          { name: 'David Kim', position: 'DevOps Engineer', department: 'Engineering', email: 'david.k@company.com', salary: '$115,000' },
-          { name: 'Jessica Martinez', position: 'Marketing Director', department: 'Marketing', email: 'jessica.m@company.com', salary: '$145,000' },
-          { name: 'Robert Taylor', position: 'Data Analyst', department: 'Analytics', email: 'robert.t@company.com', salary: '$85,000' },
-          { name: 'Amanda White', position: 'HR Manager', department: 'Human Resources', email: 'amanda.w@company.com', salary: '$105,000' },
-          { name: 'James Anderson', position: 'Sales Lead', department: 'Sales', email: 'james.a@company.com', salary: '$110,000' },
-          { name: 'Lisa Thompson', position: 'QA Engineer', department: 'Engineering', email: 'lisa.t@company.com', salary: '$90,000' },
-          { name: 'Christopher Lee', position: 'Backend Developer', department: 'Engineering', email: 'chris.l@company.com', salary: '$120,000' },
-          { name: 'Maria Garcia', position: 'Content Strategist', department: 'Marketing', email: 'maria.g@company.com', salary: '$88,000' },
-          { name: 'Daniel Brown', position: 'Security Specialist', department: 'IT Security', email: 'daniel.b@company.com', salary: '$130,000' },
-          { name: 'Jennifer Davis', position: 'Scrum Master', department: 'Engineering', email: 'jennifer.d@company.com', salary: '$100,000' },
-          { name: 'William Miller', position: 'Frontend Developer', department: 'Engineering', email: 'william.m@company.com', salary: '$105,000' },
-          { name: 'Patricia Wilson', position: 'Business Analyst', department: 'Operations', email: 'patricia.w@company.com', salary: '$92,000' }
-        ];
-
-        // Initialize tables
-        const basicTable = document.querySelector('#basicTable');
-        if (basicTable) {
-          basicTable.columns = sampleColumns;
-          basicTable.data = sampleData.slice(0, 6);
-        }
-
-        const sortableTable = document.querySelector('#sortableTable');
-        if (sortableTable) {
-          sortableTable.columns = sampleColumns;
-          sortableTable.data = sampleData.slice(0, 6);
-          sortableTable.addEventListener('aui-sort', (e) => {
-            console.log('Table sorted:', e.detail);
-          });
-        }
-
-        const paginatedTable = document.querySelector('#paginatedTable');
-        if (paginatedTable) {
-          paginatedTable.columns = sampleColumns;
-          paginatedTable.data = sampleData;
-          paginatedTable.addEventListener('aui-page-change', (e) => {
-            console.log('Page changed:', e.detail);
-          });
-        }
-
-        const selectableTable = document.querySelector('#selectableTable');
-        const selectedInfo = document.querySelector('#selectedInfo');
-        if (selectableTable) {
-          selectableTable.columns = sampleColumns;
-          selectableTable.data = sampleData.slice(0, 6);
-          selectableTable.addEventListener('aui-select', (e) => {
-            const count = e.detail.selectedRows.length;
-            selectedInfo.textContent = `Selected ${count} row${count !== 1 ? 's' : ''}`;
-          });
-        }
-
-        // Initialize premium variant tables
-        const variantIds = [
-          'glassTable', 'neonTable', 'gradientTable', 'minimalTable',
-          'animatedTable', 'neomorphicTable', 'premiumDarkTable', 'colorfulTable',
-          'glowTable', 'liftTable', 'slideTable'
-        ];
-
-        variantIds.forEach(id => {
-          const table = document.querySelector(`#${id}`);
-          if (table) {
-            table.columns = sampleColumns;
-            table.data = sampleData.slice(0, 4);
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         });
       });
