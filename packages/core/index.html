@@ -214,6 +214,47 @@
       </div>
     </div>
 
+    <!-- Table Component -->
+    <div class="demo-section">
+      <h2>Table Component</h2>
+      
+      <h3>Basic Table</h3>
+      <aui-table id="basicTable" striped hoverable></aui-table>
+
+      <h3 style="margin-top: 32px;">Sortable Table</h3>
+      <aui-table id="sortableTable" sortable striped hoverable></aui-table>
+
+      <h3 style="margin-top: 32px;">Paginated Table</h3>
+      <aui-table id="paginatedTable" paginated page-size="5" striped hoverable></aui-table>
+
+      <h3 style="margin-top: 32px;">Selectable Table</h3>
+      <aui-table id="selectableTable" selectable striped hoverable></aui-table>
+      <p id="selectedInfo" style="margin-top: 16px; color: #666;"></p>
+
+      <div class="code-block">
+// Basic usage
+const table = document.querySelector('#basicTable');
+table.columns = [
+  { key: 'name', label: 'Name', sortable: true },
+  { key: 'age', label: 'Age', sortable: true, align: 'right' },
+  { key: 'email', label: 'Email' }
+];
+table.data = [
+  { name: 'John Doe', age: 30, email: 'john@example.com' },
+  { name: 'Jane Smith', age: 25, email: 'jane@example.com' }
+];
+
+// With attributes
+&lt;aui-table paginated page-size="10" striped hoverable&gt;&lt;/aui-table&gt;
+&lt;aui-table selectable sortable striped&gt;&lt;/aui-table&gt;
+
+// Listen to events
+table.addEventListener('aui-sort', (e) => {
+  console.log('Sorted:', e.detail.column, e.detail.direction);
+});
+      </div>
+    </div>
+
     <script type="module" src="/src/index.ts"></script>
     <script>
       // Theme toggle
@@ -237,6 +278,63 @@
         clickCountEl.textContent = `Click count: ${clickCount}`;
         console.log('Button clicked!', e.detail);
       });
+
+      // Table demos
+      const sampleColumns = [
+        { key: 'name', label: 'Name', sortable: true },
+        { key: 'age', label: 'Age', sortable: true, align: 'right' },
+        { key: 'email', label: 'Email' },
+        { key: 'role', label: 'Role' }
+      ];
+
+      const sampleData = [
+        { name: 'John Doe', age: 30, email: 'john@example.com', role: 'Developer' },
+        { name: 'Jane Smith', age: 25, email: 'jane@example.com', role: 'Designer' },
+        { name: 'Bob Johnson', age: 35, email: 'bob@example.com', role: 'Manager' },
+        { name: 'Alice Williams', age: 28, email: 'alice@example.com', role: 'Developer' },
+        { name: 'Charlie Brown', age: 32, email: 'charlie@example.com', role: 'Designer' },
+        { name: 'Diana Prince', age: 29, email: 'diana@example.com', role: 'Developer' },
+        { name: 'Eve Davis', age: 31, email: 'eve@example.com', role: 'Manager' },
+        { name: 'Frank Miller', age: 27, email: 'frank@example.com', role: 'Developer' },
+        { name: 'Grace Lee', age: 33, email: 'grace@example.com', role: 'Designer' },
+        { name: 'Henry Wilson', age: 26, email: 'henry@example.com', role: 'Developer' }
+      ];
+
+      // Initialize tables
+      const basicTable = document.querySelector('#basicTable');
+      if (basicTable) {
+        basicTable.columns = sampleColumns;
+        basicTable.data = sampleData.slice(0, 5);
+      }
+
+      const sortableTable = document.querySelector('#sortableTable');
+      if (sortableTable) {
+        sortableTable.columns = sampleColumns;
+        sortableTable.data = sampleData.slice(0, 5);
+        sortableTable.addEventListener('aui-sort', (e) => {
+          console.log('Table sorted:', e.detail);
+        });
+      }
+
+      const paginatedTable = document.querySelector('#paginatedTable');
+      if (paginatedTable) {
+        paginatedTable.columns = sampleColumns;
+        paginatedTable.data = sampleData;
+        paginatedTable.addEventListener('aui-page-change', (e) => {
+          console.log('Page changed:', e.detail);
+        });
+      }
+
+      const selectableTable = document.querySelector('#selectableTable');
+      const selectedInfo = document.querySelector('#selectedInfo');
+      if (selectableTable) {
+        selectableTable.columns = sampleColumns;
+        selectableTable.data = sampleData.slice(0, 5);
+        selectableTable.addEventListener('aui-select', (e) => {
+          const count = e.detail.selectedRows.length;
+          selectedInfo.textContent = `Selected ${count} row${count !== 1 ? 's' : ''}`;
+        });
+      }
     </script>
   </body>
 </html>

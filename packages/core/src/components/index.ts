@@ -9,13 +9,4 @@ export * from './alert';
 export * from './radio';
 export * from './select';
 export * from './dialog';
-
-
-
-
-
-
-
-
-
-
+export * from './table';
