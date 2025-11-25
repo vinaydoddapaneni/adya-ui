@@ -76,6 +76,43 @@ The logo is already integrated into:
 
 All logos are provided in PNG format with transparent backgrounds (where applicable) for maximum compatibility and quality.
 
+## Copyright & License
+
+### Copyright Notice
+
+© 2025 AdyaUI Team. All rights reserved.
+
+The AdyaUI logo and all its variations are proprietary assets of the AdyaUI project.
+
+### License
+
+These logo assets are licensed under the MIT License, consistent with the AdyaUI project license.
+
+**Permitted Uses:**
+
+- ✅ Use in projects that utilize AdyaUI components
+- ✅ Use in documentation, tutorials, and educational materials about AdyaUI
+- ✅ Use in promotional materials for projects built with AdyaUI
+- ✅ Modification for integration purposes (sizing, format conversion)
+
+**Restrictions:**
+
+- ❌ Do not use the logo to imply official endorsement without permission
+- ❌ Do not use the logo in a way that suggests you created AdyaUI
+- ❌ Do not use the logo for commercial purposes unrelated to AdyaUI
+- ❌ Do not create derivative logos that could cause confusion with the official AdyaUI brand
+
+### Attribution
+
+When using the AdyaUI logo, please provide attribution:
+
+```text
+AdyaUI Logo © 2025 AdyaUI Team
+Licensed under MIT License
+```
+
+For questions about logo usage, please contact the AdyaUI team or open an issue on the GitHub repository.
+
 ---
 
 **AdyaUI** - Framework-agnostic UI Component Library
