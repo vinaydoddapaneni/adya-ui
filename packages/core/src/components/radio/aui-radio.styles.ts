@@ -3,17 +3,23 @@ import { css } from '../../base/utils';
 export const styles = css`
   :host {
     display: inline-block;
-    vertical-align: middle;
+    outline: none;
   }
 
   .aui-radio {
     display: inline-flex;
     align-items: center;
+    vertical-align: middle;
     cursor: pointer;
+    position: relative;
     user-select: none;
   }
 
-  /* Input */
+  .aui-radio--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
   .aui-radio__input {
     position: absolute;
     opacity: 0;
@@ -22,62 +28,52 @@ export const styles = css`
     margin: 0;
   }
 
-  /* Control */
   .aui-radio__control {
-    display: inline-flex;
+    position: relative;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 18px;
     height: 18px;
-    background-color: transparent;
-    border: 2px solid var(--aui-text-secondary);
+    border: 2px solid var(--aui-color-text-secondary, #666);
     border-radius: 50%;
-    transition: all var(--aui-transition-fast);
+    background-color: transparent;
+    transition: all 0.2s ease;
     box-sizing: border-box;
   }
 
-  /* Checked State */
+  .aui-radio:hover:not(.aui-radio--disabled) .aui-radio__control {
+    border-color: var(--aui-color-primary, #007bff);
+  }
+
   .aui-radio__input:checked + .aui-radio__control {
-    border-color: var(--aui-primary-main);
+    border-color: var(--aui-color-primary, #007bff);
   }
 
   .aui-radio__control::after {
     content: '';
+    position: absolute;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: var(--aui-primary-main);
+    background-color: var(--aui-color-primary, #007bff);
     transform: scale(0);
-    transition: transform var(--aui-transition-fast);
+    transition: transform 0.2s ease;
   }
 
   .aui-radio__input:checked + .aui-radio__control::after {
     transform: scale(1);
   }
 
-  /* Focus State */
   .aui-radio__input:focus-visible + .aui-radio__control {
-    box-shadow: 0 0 0 2px var(--aui-primary-100);
+    outline: 2px solid var(--aui-color-primary-light, #80bdff);
+    outline-offset: 2px;
   }
 
-  /* Disabled State */
-  :host([disabled]) .aui-radio {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-  :host([disabled]) .aui-radio__input:checked + .aui-radio__control {
-    border-color: var(--aui-gray-400);
-  }
-
-  :host([disabled]) .aui-radio__input:checked + .aui-radio__control::after {
-    background-color: var(--aui-gray-400);
-  }
-
-  /* Label */
   .aui-radio__label {
-    margin-left: var(--aui-spacing-sm);
-    font-size: var(--aui-font-size-md);
-    color: var(--aui-text-primary);
+    margin-left: 8px;
+    font-family: var(--aui-font-family, sans-serif);
+    font-size: var(--aui-font-size-md, 14px);
+    color: var(--aui-color-text-primary, #333);
   }
 `;

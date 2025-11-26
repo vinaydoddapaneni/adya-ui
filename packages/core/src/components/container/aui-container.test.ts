@@ -11,7 +11,7 @@ describe('AuiContainer', () => {
   let element: AuiContainer;
 
   beforeEach(() => {
-    element = document.createElement('aui-container') as AuiContainer;
+    element = new AuiContainer();
     document.body.appendChild(element);
   });
 

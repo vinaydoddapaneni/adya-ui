@@ -11,7 +11,7 @@ describe('AuiDialog', () => {
   let element: AuiDialog;
 
   beforeEach(() => {
-    element = document.createElement('aui-dialog') as AuiDialog;
+    element = new AuiDialog();
     document.body.appendChild(element);
   });
 

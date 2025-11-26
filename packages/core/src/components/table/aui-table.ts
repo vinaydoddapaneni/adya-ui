@@ -1,6 +1,6 @@
 import { AuiElement } from '../../base';
 
-import { styles } from './aui-table.styles.js';
+import { styles } from './aui-table.styles';
 
 export interface TableColumn {
   key: string;
@@ -217,6 +217,7 @@ export class AuiTable extends AuiElement {
 
   connectedCallback() {
     super.connectedCallback();
+    this.render();
   }
 
   private setupEventListeners() {
@@ -381,7 +382,7 @@ export class AuiTable extends AuiElement {
 
     const columnHeaders = this._columns
       .map((col) => {
-        const isSortable = this.sortable && col.sortable !== false;
+        const isSortable = this.sortable && col.sortable === true;
         const isSorted = this._sortState.column === col.key;
         const sortIcon =
           isSorted && this._sortState.direction

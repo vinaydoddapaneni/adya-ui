@@ -29,9 +29,9 @@
     "build:core": "pnpm --filter @adyaui/core build",
     "build:react": "pnpm --filter @adyaui/react build",
     "build:vue": "pnpm --filter @adyaui/vue build",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
+    "test": "vitest --browser",
+    "test:ui": "vitest --browser --ui",
+    "test:coverage": "vitest --browser --coverage",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.vue",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx,.vue --fix",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,vue,css,scss,md,json}\"",
@@ -45,20 +45,26 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^20.10.0",
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0",
-    "@vitest/ui": "^1.0.0",
+    "@vitest/browser": "^4.0.14",
+    "@vitest/ui": "^1.6.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.10.1",
     "eslint-plugin-import": "^2.29.0",
     "husky": "^8.0.3",
+    "jsdom": "^27.2.0",
     "lint-staged": "^15.1.0",
     "prettier": "^3.1.0",
     "typescript": "^5.3.2",
     "vite": "^5.0.0",
-    "vitest": "^1.0.0"
+    "vitest": "^1.6.1"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,vue}": [

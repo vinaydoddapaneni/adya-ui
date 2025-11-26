@@ -11,7 +11,7 @@ describe('AuiButton', () => {
   let element: AuiButton;
 
   beforeEach(() => {
-    element = document.createElement('aui-button') as AuiButton;
+    element = new AuiButton();
     document.body.appendChild(element);
   });
 

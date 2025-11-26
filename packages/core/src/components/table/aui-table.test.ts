@@ -23,7 +23,7 @@ describe('AuiTable', () => {
   ];
 
   beforeEach(() => {
-    element = document.createElement('aui-table') as AuiTable;
+    element = new AuiTable();
     document.body.appendChild(element);
   });
 

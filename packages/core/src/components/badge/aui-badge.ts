@@ -1,5 +1,6 @@
 import { AuiElement } from '../../base/aui-element';
-import { styles } from './aui-badge.styles.js';
+
+import { styles } from './aui-badge.styles';
 
 
 

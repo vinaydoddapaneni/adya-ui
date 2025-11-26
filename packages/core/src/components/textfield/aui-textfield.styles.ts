@@ -20,6 +20,11 @@ export const styles = css`
     transition: color var(--aui-transition-fast);
   }
 
+  .aui-textfield__required {
+    color: var(--aui-error);
+    margin-left: 2px;
+  }
+
   :host([focused]) .aui-textfield__label {
     color: var(--aui-primary-main);
   }
@@ -33,10 +38,11 @@ export const styles = css`
     position: relative;
     display: flex;
     align-items: center;
+    gap: var(--aui-spacing-xs);
     background-color: var(--aui-surface);
     border: 1px solid var(--aui-divider);
     border-radius: var(--aui-radius-md);
-    transition: border-color var(--aui-transition-fast), box-shadow var(--aui-transition-fast);
+    transition: border-color var(--aui-transition-fast), box-shadow var(--aui-transition-fast), background-color var(--aui-transition-fast);
   }
 
   :host([focused]) .aui-textfield__input-wrapper {
@@ -56,6 +62,27 @@ export const styles = css`
     background-color: var(--aui-gray-100);
     border-color: var(--aui-gray-300);
     cursor: not-allowed;
+  }
+
+  :host([readonly]) .aui-textfield__input-wrapper {
+    background-color: var(--aui-gray-50);
+    border-color: var(--aui-gray-300);
+  }
+
+  /* Prefix and Suffix Slots */
+  .aui-textfield__prefix,
+  .aui-textfield__suffix {
+    display: flex;
+    align-items: center;
+    color: var(--aui-text-secondary);
+  }
+
+  .aui-textfield__prefix {
+    padding-left: var(--aui-spacing-md);
+  }
+
+  .aui-textfield__suffix {
+    padding-right: var(--aui-spacing-md);
   }
 
   /* Input */
@@ -82,6 +109,10 @@ export const styles = css`
     cursor: not-allowed;
   }
 
+  :host([readonly]) .aui-textfield__input {
+    cursor: default;
+  }
+
   /* Helper Text */
   .aui-textfield__helper-text {
     font-size: var(--aui-font-size-xs);
@@ -92,4 +123,98 @@ export const styles = css`
   :host([error]) .aui-textfield__helper-text {
     color: var(--aui-error);
   }
+
+  /* Variant: Filled */
+  .aui-textfield--filled .aui-textfield__input-wrapper {
+    background-color: var(--aui-gray-100);
+    border: none;
+    border-bottom: 2px solid var(--aui-divider);
+    border-radius: var(--aui-radius-md) var(--aui-radius-md) 0 0;
+  }
+
+  .aui-textfield--filled:host([focused]) .aui-textfield__input-wrapper {
+    background-color: var(--aui-gray-200);
+    border-bottom-color: var(--aui-primary-main);
+    box-shadow: none;
+  }
+
+  .aui-textfield--filled:host([error]) .aui-textfield__input-wrapper {
+    border-bottom-color: var(--aui-error);
+  }
+
+  /* Variant: Standard */
+  .aui-textfield--standard .aui-textfield__input-wrapper {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--aui-divider);
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .aui-textfield--standard:host([focused]) .aui-textfield__input-wrapper {
+    border-bottom: 2px solid var(--aui-primary-main);
+    box-shadow: none;
+  }
+
+  .aui-textfield--standard:host([error]) .aui-textfield__input-wrapper {
+    border-bottom-color: var(--aui-error);
+  }
+
+  .aui-textfield--standard .aui-textfield__input {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .aui-textfield--standard .aui-textfield__prefix {
+    padding-left: 0;
+  }
+
+  .aui-textfield--standard .aui-textfield__suffix {
+    padding-right: 0;
+  }
+
+  /* Size: Small */
+  .aui-textfield--small .aui-textfield__label {
+    font-size: var(--aui-font-size-xs);
+  }
+
+  .aui-textfield--small .aui-textfield__input {
+    padding: var(--aui-spacing-xs) var(--aui-spacing-sm);
+    font-size: var(--aui-font-size-sm);
+  }
+
+  .aui-textfield--small .aui-textfield__prefix {
+    padding-left: var(--aui-spacing-sm);
+  }
+
+  .aui-textfield--small .aui-textfield__suffix {
+    padding-right: var(--aui-spacing-sm);
+  }
+
+  .aui-textfield--small .aui-textfield__helper-text {
+    font-size: 10px;
+  }
+
+  /* Size: Large */
+  .aui-textfield--large .aui-textfield__label {
+    font-size: var(--aui-font-size-md);
+  }
+
+  .aui-textfield--large .aui-textfield__input {
+    padding: var(--aui-spacing-md) var(--aui-spacing-lg);
+    font-size: var(--aui-font-size-lg);
+  }
+
+  .aui-textfield--large .aui-textfield__prefix {
+    padding-left: var(--aui-spacing-lg);
+  }
+
+  .aui-textfield--large .aui-textfield__suffix {
+    padding-right: var(--aui-spacing-lg);
+  }
+
+  .aui-textfield--large .aui-textfield__helper-text {
+    font-size: var(--aui-font-size-sm);
+  }
 `;
+

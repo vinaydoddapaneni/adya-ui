@@ -11,7 +11,7 @@ describe('AuiTypography', () => {
   let element: AuiTypography;
 
   beforeEach(() => {
-    element = document.createElement('aui-typography') as AuiTypography;
+    element = new AuiTypography();
     document.body.appendChild(element);
   });
 

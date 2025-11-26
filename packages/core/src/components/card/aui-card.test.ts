@@ -11,7 +11,7 @@ describe('AuiCard', () => {
   let element: AuiCard;
 
   beforeEach(() => {
-    element = document.createElement('aui-card') as AuiCard;
+    element = new AuiCard();
     document.body.appendChild(element);
   });
 

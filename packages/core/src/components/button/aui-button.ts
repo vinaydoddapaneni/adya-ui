@@ -1,6 +1,6 @@
 import { AuiElement } from '../../base';
 
-import { styles } from './aui-button.styles.js';
+import { styles } from './aui-button.styles';
 
 export type AuiButtonVariant = 'primary' | 'secondary' | 'outlined' | 'text';
 export type AuiButtonSize = 'small' | 'medium' | 'large';

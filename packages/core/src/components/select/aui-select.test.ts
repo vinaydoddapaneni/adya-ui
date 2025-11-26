@@ -11,7 +11,7 @@ describe('AuiSelect', () => {
   let element: AuiSelect;
 
   beforeEach(() => {
-    element = document.createElement('aui-select') as AuiSelect;
+    element = new AuiSelect();
     document.body.appendChild(element);
   });
 

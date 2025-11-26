@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+
 import { AuiBadge } from './aui-badge';
-import { setupTest, teardownTest } from '../../test-utils';
 
 // Register the element if not already registered
 if (!customElements.get('aui-badge')) {
@@ -11,17 +11,18 @@ describe('AuiBadge', () => {
   let element: AuiBadge;
 
   beforeEach(() => {
-    element = setupTest<AuiBadge>('aui-badge');
+    element = new AuiBadge();
+    document.body.appendChild(element);
   });
 
   afterEach(() => {
-    teardownTest(element);
+    document.body.removeChild(element);
   });
 
   it('renders with default values', () => {
-    expect(element.textContent).toBe('');
-    expect(element.getAttribute('variant')).toBe('standard');
-    expect(element.getAttribute('size')).toBe('medium');
+    expect(element.value).toBe('');
+    expect(element.variant).toBe('standard');
+    expect(element.size).toBe('medium');
   });
 
   it('reflects attribute changes to properties', () => {
@@ -47,12 +48,14 @@ describe('AuiBadge', () => {
   });
 
   it('formats the badge content correctly', () => {
+    element.setAttribute('variant', 'number');
     element.value = 100;
     element.max = 99;
-    expect(element.textContent).toBe('99+');
+    const badgeSpan = element.shadowRoot?.querySelector('.badge');
+    expect(badgeSpan?.textContent).toBe('99+');
 
     element.max = 1000;
     element.value = 1000;
-    expect(element.textContent).toBe('1000');
+    expect(badgeSpan?.textContent).toBe('1000');
   });
 });

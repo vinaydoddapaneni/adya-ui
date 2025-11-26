@@ -11,7 +11,7 @@ describe('AuiSwitch', () => {
   let element: AuiSwitch;
 
   beforeEach(() => {
-    element = document.createElement('aui-switch') as AuiSwitch;
+    element = new AuiSwitch();
     document.body.appendChild(element);
   });
 

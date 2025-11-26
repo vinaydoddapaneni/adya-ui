@@ -1,23 +1,9 @@
 import { AuiElement } from '../../base/aui-element';
-
 import { styles } from './aui-radio.styles';
 
-/**
- * AuiRadio - A single selection component
- * 
- * @element aui-radio
- * 
- * @attr {boolean} checked - Whether the radio is checked
- * @attr {boolean} disabled - Whether the radio is disabled
- * @attr {string} label - Label to display next to radio
- * @attr {string} name - Name of the radio group
- * @attr {string} value - Value of the radio input
- * 
- * @fires change - Emitted when checked state changes
- */
 export class AuiRadio extends AuiElement {
   static get observedAttributes() {
-    return ['checked', 'disabled', 'label', 'name', 'value'];
+    return ['checked', 'disabled', 'name', 'value', 'label'];
   }
 
   get checked(): boolean {
@@ -44,14 +30,6 @@ export class AuiRadio extends AuiElement {
     }
   }
 
-  get label(): string {
-    return this.getAttribute('label') || '';
-  }
-
-  set label(value: string) {
-    this.setAttribute('label', value);
-  }
-
   get name(): string {
     return this.getAttribute('name') || '';
   }
@@ -61,47 +39,75 @@ export class AuiRadio extends AuiElement {
   }
 
   get value(): string {
-    return this.getAttribute('value') || 'on';
+    return this.getAttribute('value') || '';
   }
 
   set value(value: string) {
     this.setAttribute('value', value);
   }
 
+  get label(): string {
+    return this.getAttribute('label') || '';
+  }
+
+  set label(value: string) {
+    this.setAttribute('label', value);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.addEventListener('click', this.handleClick);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.removeEventListener('click', this.handleClick);
+  }
+
+  private handleClick = (e: Event) => {
+    if (this.disabled) {
+      e.preventDefault();
+      return;
+    }
+
+    // If already checked, do nothing (radio buttons don't toggle off by clicking)
+    if (this.checked) return;
+
+    this.checked = true;
+    this.emit('change', { checked: true, value: this.value });
+    
+    // Handle radio group behavior if name is present
+    if (this.name) {
+      const radios = document.querySelectorAll(`aui-radio[name="${this.name}"]`);
+      radios.forEach((radio) => {
+        if (radio !== this && radio instanceof AuiRadio) {
+          radio.checked = false;
+        }
+      });
+    }
+  };
+
   protected render() {
+    const disabledClass = this.disabled ? 'aui-radio--disabled' : '';
+
     this._shadowRoot.innerHTML = `
       <style>${styles}</style>
-      <label class="aui-radio">
-        <input
+      <label class="aui-radio ${disabledClass}">
+        <input 
+          type="radio" 
           class="aui-radio__input"
-          type="radio"
           name="${this.name}"
           value="${this.value}"
           ${this.checked ? 'checked' : ''}
           ${this.disabled ? 'disabled' : ''}
+          tabindex="-1"
         />
         <span class="aui-radio__control"></span>
-        ${this.label ? `<span class="aui-radio__label">${this.label}</span>` : ''}
+        <span class="aui-radio__label">
+          <slot>${this.label}</slot>
+        </span>
       </label>
     `;
-
-    this.setupEventListeners();
-  }
-
-  private setupEventListeners() {
-    const input = this._shadowRoot.querySelector('input');
-    if (!input) return;
-
-    input.addEventListener('change', (e) => {
-      const target = e.target as HTMLInputElement;
-      // Radio buttons only emit change when checked
-      if (target.checked) {
-        this.checked = true;
-        this.emit('change', { checked: true, value: this.value });
-        
-        // Uncheck other radios with same name in the same scope (if needed logic can be added here or handled by parent group)
-      }
-    });
   }
 }
 

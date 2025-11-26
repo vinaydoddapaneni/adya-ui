@@ -1,0 +1,10 @@
+﻿
+[7m[1m[36m RUN [39m[22m[27m [36mv1.6.1[39m [90mC:/Users/vinay/Downloads/AdyaUI[39m
+
+ [33mΓ¥»[39m packages/core/src/components/alert/aui-alert.test.ts [2m ([22m[2m0 test[22m[2m)[22m
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 16:52:26
+[2m   Duration [22m 1.10s[2m (transform 158ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 363ms)[22m
+

@@ -11,7 +11,8 @@ export class AuiElement extends HTMLElement {
     this._shadowRoot = this.attachShadow({ mode: 'open' });
     
     // Enable form participation if supported
-    if ('attachInternals' in this) {
+    // Enable form participation if supported
+    if ('attachInternals' in this && (this.constructor as any).formAssociated) {
       this._internals = this.attachInternals();
     }
   }
