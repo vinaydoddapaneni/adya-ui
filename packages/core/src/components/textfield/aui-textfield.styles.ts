@@ -15,9 +15,10 @@ export const styles = css`
   /* Label */
   .aui-textfield__label {
     font-size: var(--aui-font-size-sm);
-    font-weight: var(--aui-font-weight-medium);
+    font-weight: 600;
     color: var(--aui-text-secondary);
     transition: color var(--aui-transition-fast);
+    letter-spacing: 0.01em;
   }
 
   .aui-textfield__required {
@@ -40,14 +41,20 @@ export const styles = css`
     align-items: center;
     gap: var(--aui-spacing-xs);
     background-color: var(--aui-surface);
-    border: 1px solid var(--aui-divider);
+    border: 2px solid var(--aui-divider);
     border-radius: var(--aui-radius-md);
-    transition: border-color var(--aui-transition-fast), box-shadow var(--aui-transition-fast), background-color var(--aui-transition-fast);
+    transition: all var(--aui-transition-base);
+  }
+
+  .aui-textfield__input-wrapper:hover:not(:has(input:disabled)) {
+    border-color: var(--aui-gray-400);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
 
   :host([focused]) .aui-textfield__input-wrapper {
     border-color: var(--aui-primary-main);
-    box-shadow: 0 0 0 2px var(--aui-primary-100);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    background-color: var(--aui-surface);
   }
 
   :host([error]) .aui-textfield__input-wrapper {
@@ -55,13 +62,14 @@ export const styles = css`
   }
 
   :host([error][focused]) .aui-textfield__input-wrapper {
-    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
   }
 
   :host([disabled]) .aui-textfield__input-wrapper {
     background-color: var(--aui-gray-100);
     border-color: var(--aui-gray-300);
     cursor: not-allowed;
+    opacity: 0.6;
   }
 
   :host([readonly]) .aui-textfield__input-wrapper {

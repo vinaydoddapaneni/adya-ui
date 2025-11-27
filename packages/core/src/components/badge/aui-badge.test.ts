@@ -51,11 +51,13 @@ describe('AuiBadge', () => {
     element.setAttribute('variant', 'number');
     element.value = 100;
     element.max = 99;
-    const badgeSpan = element.shadowRoot?.querySelector('.badge');
+    let badgeSpan = element.shadowRoot?.querySelector('.badge');
     expect(badgeSpan?.textContent).toBe('99+');
 
     element.max = 1000;
     element.value = 1000;
+    // Get fresh reference after re-render
+    badgeSpan = element.shadowRoot?.querySelector('.badge');
     expect(badgeSpan?.textContent).toBe('1000');
   });
 });

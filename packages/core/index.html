@@ -534,8 +534,289 @@
         </div>
       </section>
 
-      <!-- Continue with more components... -->
-      <p style="text-align: center; color: var(--gray-500); margin: 60px 0;">More components coming soon...</p>
+      <!-- Additional component demos -->
+
+      <section id="app-bar" class="component-section">
+        <h2>🔝 App Bar</h2>
+        <p class="component-section-subtitle">Top app bar with slots for start/end content</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-app-bar position="fixed" color="primary">
+              <span slot="start">☰</span>
+              App title
+              <span slot="end">⚙️</span>
+            </aui-app-bar>
+          </div>
+        </div>
+      </section>
+
+      <section id="autocomplete" class="component-section">
+        <h2>🔎 Autocomplete</h2>
+        <p class="component-section-subtitle">Typeahead input with suggestions</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-autocomplete placeholder="Search..." id="demo-autocomplete"></aui-autocomplete>
+          </div>
+          <div class="code-block-container">
+            <button class="copy-button" onclick="copyCode(this)">Copy</button>
+            <pre class="code-block">&lt;aui-autocomplete placeholder="Search..."&gt;&lt;/aui-autocomplete&gt;</pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="avatar" class="component-section">
+        <h2>🧑 Avatar</h2>
+        <p class="component-section-subtitle">User avatar with image or initials</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-avatar src="/src/assets/avatar-1.svg" alt="Jane Doe" size="large"></aui-avatar>
+            <aui-avatar initials="JD" size="medium"></aui-avatar>
+            <aui-avatar initials="AB" size="small"></aui-avatar>
+          </div>
+        </div>
+      </section>
+
+      <section id="badge" class="component-section">
+        <h2>🏷️ Badge</h2>
+        <p class="component-section-subtitle">Small status or count badges</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-badge>New</aui-badge>
+            <aui-badge value="99+">Messages</aui-badge>
+          </div>
+        </div>
+      </section>
+
+      <section id="carousel" class="component-section">
+        <h2>🖼️ Carousel</h2>
+        <p class="component-section-subtitle">Image slider with controls and indicators</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-carousel autoplay interval="2500" show-controls show-indicators>
+              <aui-carousel-slide>Slide 1</aui-carousel-slide>
+              <aui-carousel-slide>Slide 2</aui-carousel-slide>
+              <aui-carousel-slide>Slide 3</aui-carousel-slide>
+            </aui-carousel>
+          </div>
+        </div>
+      </section>
+
+      <section id="progress" class="component-section">
+        <h2>⏳ Progress</h2>
+        <p class="component-section-subtitle">Circular and linear progress indicators</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-circular-progress value="65"></aui-circular-progress>
+            <aui-linear-progress value="40"></aui-linear-progress>
+          </div>
+        </div>
+      </section>
+
+      <section id="datagrid" class="component-section">
+        <h2>📋 Data Grid</h2>
+        <p class="component-section-subtitle">Advanced datagrid with sorting and pagination</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-datagrid id="demo-datagrid"></aui-datagrid>
+          </div>
+        </div>
+      </section>
+
+      <section id="datepicker" class="component-section">
+        <h2>📅 Date Picker</h2>
+        <p class="component-section-subtitle">Select a date from a calendar</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-datepicker></aui-datepicker>
+          </div>
+        </div>
+      </section>
+
+      <section id="dialog" class="component-section">
+        <h2>💬 Dialog</h2>
+        <p class="component-section-subtitle">Modal dialog for confirmations and forms</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <button onclick="document.getElementById('demo-dialog').open=true">Open Dialog</button>
+            <aui-dialog id="demo-dialog" headline="Example dialog">
+              <div>Dialog content goes here.</div>
+              <div slot="actions"><aui-button variant="primary" onclick="document.getElementById('demo-dialog').open=false">Close</aui-button></div>
+            </aui-dialog>
+          </div>
+        </div>
+      </section>
+
+      <section id="divider" class="component-section">
+        <h2>➗ Divider</h2>
+        <p class="component-section-subtitle">Simple visual divider with optional content</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <p>Above</p>
+            <aui-divider>Section</aui-divider>
+            <p>Below</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="drawer" class="component-section">
+        <h2>📂 Drawer</h2>
+        <p class="component-section-subtitle">Off-canvas side panel</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <button onclick="document.getElementById('demo-drawer').open=true">Open Drawer</button>
+            <aui-drawer id="demo-drawer" placement="start">
+              <div slot="label">Navigation</div>
+              <div>Drawer body content</div>
+            </aui-drawer>
+          </div>
+        </div>
+      </section>
+
+      <section id="icon" class="component-section">
+        <h2>🔔 Icon</h2>
+        <p class="component-section-subtitle">Inline icon component</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-icon>star</aui-icon>
+            <aui-icon src="/src/assets/icon-heart.svg" label="heart"></aui-icon>
+          </div>
+        </div>
+      </section>
+
+      <section id="list" class="component-section">
+        <h2>📚 List</h2>
+        <p class="component-section-subtitle">Container for list items</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-list>
+              <div>Item A</div>
+              <div>Item B</div>
+              <div>Item C</div>
+            </aui-list>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="component-section">
+        <h2>📑 Menu</h2>
+        <p class="component-section-subtitle">Dropdown menu with trigger slot</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-menu placement="bottom-start">
+              <button slot="trigger">Open Menu</button>
+              <aui-menu-item>Item 1</aui-menu-item>
+              <aui-menu-item>Item 2</aui-menu-item>
+            </aui-menu>
+          </div>
+        </div>
+      </section>
+
+      <section id="pagination" class="component-section">
+        <h2>📄 Pagination</h2>
+        <p class="component-section-subtitle">Pagination controls</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-pagination page="1" total="10" show-first-last></aui-pagination>
+          </div>
+        </div>
+      </section>
+
+      <section id="rating" class="component-section">
+        <h2>⭐ Rating</h2>
+        <p class="component-section-subtitle">Star rating control</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-rating value="3.5" precision></aui-rating>
+          </div>
+        </div>
+      </section>
+
+      <section id="select" class="component-section">
+        <h2>🔽 Select</h2>
+        <p class="component-section-subtitle">Dropdown select input</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-select label="Choose" placeholder="Select...">
+              <option value="1">One</option>
+              <option value="2">Two</option>
+            </aui-select>
+          </div>
+        </div>
+      </section>
+
+      <section id="stepper" class="component-section">
+        <h2>➡️ Stepper</h2>
+        <p class="component-section-subtitle">Multi-step progress indicator</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-stepper active="1">
+              <aui-step label="Step 1"></aui-step>
+              <aui-step label="Step 2"></aui-step>
+              <aui-step label="Step 3"></aui-step>
+            </aui-stepper>
+          </div>
+        </div>
+      </section>
+
+      <section id="tabs" class="component-section">
+        <h2>📇 Tabs</h2>
+        <p class="component-section-subtitle">Tabbed navigation</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-tabs value="tab-1">
+              <aui-tab slot="tab" value="tab-1">Tab 1</aui-tab>
+              <aui-tab slot="tab" value="tab-2">Tab 2</aui-tab>
+              <aui-tab-panel slot="panel" value="tab-1">Panel 1</aui-tab-panel>
+              <aui-tab-panel slot="panel" value="tab-2">Panel 2</aui-tab-panel>
+            </aui-tabs>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="component-section">
+        <h2>🕒 Timeline</h2>
+        <p class="component-section-subtitle">Chronological event list</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-timeline>
+              <aui-timeline-item>Event 1</aui-timeline-item>
+              <aui-timeline-item>Event 2</aui-timeline-item>
+            </aui-timeline>
+          </div>
+        </div>
+      </section>
+
+      <section id="timepicker" class="component-section">
+        <h2>⏱️ Time Picker</h2>
+        <p class="component-section-subtitle">Pick a time value</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-timepicker></aui-timepicker>
+          </div>
+        </div>
+      </section>
+
+      <section id="tooltip" class="component-section">
+        <h2>💡 Tooltip</h2>
+        <p class="component-section-subtitle">Hover hints and contextual help</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-tooltip content="Helpful tip"><button>Hover me</button></aui-tooltip>
+          </div>
+        </div>
+      </section>
+
+      <section id="treeview" class="component-section">
+        <h2>🌳 Tree View</h2>
+        <p class="component-section-subtitle">Hierarchical data explorer</p>
+        <div class="component-demo">
+          <div class="demo-preview">
+            <aui-treeview id="demo-tree"></aui-treeview>
+          </div>
+        </div>
+      </section>
+
+      <p style="text-align: center; color: var(--gray-500); margin: 60px 0;">All implemented components are showcased above.</p>
     </main>
 
     <script type="module" src="/src/index.ts"></script>
@@ -595,6 +876,66 @@
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         });
+      });
+    </script>
+    <script>
+      // Demo initialization: populate interactive examples and wire simple logging
+      document.addEventListener('DOMContentLoaded', () => {
+        var ac = document.getElementById('demo-autocomplete');
+        if (ac && typeof ac.setOptions === 'function') {
+          ac.setOptions([
+            { label: 'Apple', value: 'apple' },
+            { label: 'Banana', value: 'banana' },
+            { label: 'Cherry', value: 'cherry' },
+            { label: 'Date', value: 'date' }
+          ]);
+        }
+
+        var dg = document.getElementById('demo-datagrid');
+        if (dg && typeof dg.setColumns === 'function') {
+          dg.setColumns([
+            { field: 'id', header: 'ID', sortable: true, width: '60px' },
+            { field: 'name', header: 'Name', sortable: true },
+            { field: 'status', header: 'Status' }
+          ]);
+
+          dg.setRows([
+            { id: 1, name: 'Alpha', status: 'Active' },
+            { id: 2, name: 'Beta', status: 'Paused' },
+            { id: 3, name: 'Gamma', status: 'Active' },
+            { id: 4, name: 'Delta', status: 'Archived' }
+          ]);
+
+          dg.setAttribute('show-pagination', '');
+          dg.setAttribute('page-size', '2');
+        }
+
+        var tv = document.getElementById('demo-tree');
+        if (tv && typeof tv.setNodes === 'function') {
+          tv.setNodes([
+            { id: 'root', label: 'Root', children: [
+              { id: 'child-1', label: 'Child 1' },
+              { id: 'child-2', label: 'Child 2', children: [ { id: 'grand-1', label: 'Grandchild 1' } ] }
+            ] }
+          ]);
+        }
+
+        // Wire simple event logging for demos
+        if (ac) {
+          ac.addEventListener && ac.addEventListener('change', function (e) { console.log('autocomplete change', e.detail); });
+          ac.addEventListener && ac.addEventListener('input', function (e) { console.log('autocomplete input', e.detail); });
+        }
+
+        if (dg) {
+          dg.addEventListener && dg.addEventListener('row-select', function (e) { console.log('datagrid row-select', e.detail); });
+          dg.addEventListener && dg.addEventListener('page-change', function (e) { console.log('datagrid page-change', e.detail); });
+        }
+
+        var rating = document.querySelector('aui-rating');
+        if (rating) rating.addEventListener && rating.addEventListener('change', function (e) { console.log('rating', e.detail); });
+
+        var pagination = document.querySelector('aui-pagination');
+        if (pagination) pagination.addEventListener && pagination.addEventListener('change', function (e) { console.log('pagination', e.detail); });
       });
     </script>
   </body>
