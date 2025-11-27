@@ -186,8 +186,8 @@ describe('AuiTable', () => {
       firstHeader.click();
       
       expect(sortSpy).toHaveBeenCalled();
-      expect(sortSpy.mock.calls[0][0].detail.column).toBe('name');
-      expect(sortSpy.mock.calls[0][0].detail.direction).toBe('asc');
+      expect(sortSpy.mock.calls[0]![0].detail.column).toBe('name');
+      expect(sortSpy.mock.calls[0]![0].detail.direction).toBe('asc');
     });
   });
 
@@ -236,7 +236,7 @@ describe('AuiTable', () => {
       firstRow.click();
       
       expect(clickSpy).toHaveBeenCalled();
-      expect(clickSpy.mock.calls[0][0].detail.index).toBe(0);
+      expect(clickSpy.mock.calls[0]![0].detail.index).toBe(0);
     });
   });
 

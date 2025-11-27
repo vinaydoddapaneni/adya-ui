@@ -3,11 +3,19 @@ import { css } from '../../base/utils';
 export const styles = css`
   :host {
     display: block;
-    background-color: var(--aui-background);
+    background-color: var(--aui-surface);
     color: var(--aui-text-primary);
-    border-radius: var(--aui-radius-md);
+    border-radius: var(--aui-radius-lg);
     overflow: hidden;
-    transition: box-shadow var(--aui-transition-base);
+    transition: all var(--aui-transition-base);
+    box-shadow: var(--aui-shadow-md);
+    border: 1px solid var(--aui-divider);
+  }
+
+  :host(:hover) {
+    transform: translateY(-4px);
+    box-shadow: var(--aui-shadow-xl);
+    border-color: rgba(79, 70, 229, 0.1);
   }
 
   /* Variants */

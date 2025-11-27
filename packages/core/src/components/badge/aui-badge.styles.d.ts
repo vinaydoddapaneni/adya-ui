@@ -1,0 +1,2 @@
+export declare const styles = "\n/* Badge component styles */\n:host {\n  display: inline-block;\n  position: relative;\n}\n.badge {\n  position: absolute;\n  top: -0.5em;\n  right: -0.5em;\n  background: var(--aui-primary);\n  color: #fff;\n  border-radius: 9999px;\n  padding: 0.2em 0.5em;\n  font-size: 0.75rem;\n  line-height: 1;\n}";
+//# sourceMappingURL=aui-badge.styles.d.ts.map

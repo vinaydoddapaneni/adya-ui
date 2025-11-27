@@ -29,9 +29,9 @@
     "build:core": "pnpm --filter @adyaui/core build",
     "build:react": "pnpm --filter @adyaui/react build",
     "build:vue": "pnpm --filter @adyaui/vue build",
-    "test": "vitest --browser",
-    "test:ui": "vitest --browser --ui",
-    "test:coverage": "vitest --browser --coverage",
+    "test": "pnpm -r test",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.vue",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx,.vue --fix",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,vue,css,scss,md,json}\"",
@@ -53,7 +53,7 @@
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0",
     "@vitest/browser": "^4.0.14",
-    "@vitest/ui": "^1.6.1",
+    "@vitest/ui": "^4.0.14",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.10.1",
@@ -64,7 +64,7 @@
     "prettier": "^3.1.0",
     "typescript": "^5.3.2",
     "vite": "^5.0.0",
-    "vitest": "^1.6.1"
+    "vitest": "^4.0.14"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,vue}": [

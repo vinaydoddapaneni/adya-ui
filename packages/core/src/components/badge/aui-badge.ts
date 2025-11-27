@@ -14,16 +14,32 @@ export class AuiBadge extends AuiElement {
     return this.getAttribute('value') || ''; 
   }
   set value(v: string | number) { 
-    this.setAttribute('value', v.toString()); 
+    this.setAttribute('value', v.toString());
+    // Only call render if element is connected
+    if (this.isConnected) {
+      this.render();
+    }
   }
 
   // Variant property (standard, dot, etc.)
   get variant() { return this.getAttribute('variant') || 'standard'; }
-  set variant(v: string) { this.setAttribute('variant', v); }
+  set variant(v: string) { 
+    this.setAttribute('variant', v);
+    // Only call render if element is connected
+    if (this.isConnected) {
+      this.render();
+    }
+  }
 
   // Size property (small, medium, etc.)
   get size() { return this.getAttribute('size') || 'medium'; }
-  set size(v: string) { this.setAttribute('size', v); }
+  set size(v: string) { 
+    this.setAttribute('size', v);
+    // Only call render if element is connected
+    if (this.isConnected) {
+      this.render();
+    }
+  }
 
   // Max value for number badges
   get max() { 
@@ -32,6 +48,10 @@ export class AuiBadge extends AuiElement {
   }
   set max(v: number | string) { 
     this.setAttribute('max', v.toString());
+    // Only call render if element is connected
+    if (this.isConnected) {
+      this.render();
+    }
   }
 
   connectedCallback() { 
@@ -58,6 +78,8 @@ export class AuiBadge extends AuiElement {
       const maxValue = this.max;
       if (!isNaN(numValue) && maxValue !== undefined && numValue > Number(maxValue)) {
         badgeContent = `${maxValue}+`;
+      } else if (!isNaN(numValue)) {
+        badgeContent = numValue.toString();
       }
     }
 

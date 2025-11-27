@@ -1,0 +1,33 @@
+{
+  "name": "@adyaui/vue",
+  "version": "0.0.1",
+  "description": "Vue wrapper components for AdyaUI",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "vue",
+    "ui",
+    "components",
+    "adyaui"
+  ],
+  "author": "AdyaUI Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "@adyaui/core": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.2",
+    "vue": "^3.3.0"
+  }
+}
