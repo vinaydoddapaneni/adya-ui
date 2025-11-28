@@ -1,6 +1,0 @@
-﻿src/components/table/aui-table.test.ts(189,14): error TS2532: Object is possibly 'undefined'.
-src/components/table/aui-table.test.ts(190,14): error TS2532: Object is possibly 'undefined'.
-src/components/table/aui-table.test.ts(239,14): error TS2532: Object is possibly 'undefined'.
-undefined
-C:\Users\vinay\Downloads\AdyaUI\packages\core:
-ΓÇëERR_PNPM_RECURSIVE_EXEC_FIRST_FAILΓÇë Command failed with exit code 1: tsc --noEmit
