@@ -9,6 +9,7 @@
 [![npm version](https://img.shields.io/npm/v/adya-ui-core.svg)](https://www.npmjs.com/package/adya-ui-core)
 [![npm version](https://img.shields.io/npm/v/adya-ui-react.svg)](https://www.npmjs.com/package/adya-ui-react)
 [![npm version](https://img.shields.io/npm/v/adya-ui-vue.svg)](https://www.npmjs.com/package/adya-ui-vue)
+[![npm version](https://img.shields.io/npm/v/adya-ui-cli.svg)](https://www.npmjs.com/package/adya-ui-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)](https://www.typescriptlang.org/)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/adya-ui-core)](https://bundlephobia.com/package/adya-ui-core)
@@ -37,7 +38,17 @@
 
 ## 📦 Installation
 
-### Using npm/pnpm/yarn
+### AI CLI (Recommended)
+
+```bash
+# Install globally
+npm install -g adya-ui-cli
+
+# Or use with npx (no installation needed)
+npx adya-ui-cli init
+```
+
+### Component Libraries
 
 ```bash
 # Core (Web Components)

@@ -1,5 +1,5 @@
 {
-  "name": "@adyaui/cli",
+  "name": "adya-ui-cli",
   "version": "0.1.0",
   "description": "AI-powered CLI for AdyaUI component generation",
   "keywords": [
@@ -13,6 +13,12 @@
   ],
   "author": "AdyaUI Team",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinaydoddapaneni/adya-ui.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/vinaydoddapaneni/adya-ui#readme",
   "type": "module",
   "bin": {
     "adya-ui": "./dist/index.js"

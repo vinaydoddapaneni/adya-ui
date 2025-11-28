@@ -6,10 +6,10 @@
 
 ```bash
 # Install globally
-npm install -g @adyaui/cli
+npm install -g adya-ui-cli
 
 # Or use with npx (no installation needed)
-npx @adyaui/cli --help
+npx adya-ui-cli --help
 ```
 
 ### Initialize Your Project
@@ -19,7 +19,7 @@ npx @adyaui/cli --help
 cd my-react-app
 
 # Initialize AdyaUI AI
-npx @adyaui/cli init
+npx adya-ui-cli init
 ```
 
 This will:
