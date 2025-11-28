@@ -1,5 +1,5 @@
 import React from 'react';
-import '@adyaui/core';
+import 'adya-ui-core';
 
 export interface TextFieldProps extends React.HTMLAttributes<HTMLElement> {
   label?: string;

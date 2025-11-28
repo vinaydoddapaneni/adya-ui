@@ -1,5 +1,5 @@
 import React from 'react';
-import '@adyaui/core';
+import 'adya-ui-core';
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
   variant?: 'primary' | 'secondary' | 'outlined' | 'text';

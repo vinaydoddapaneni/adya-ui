@@ -1,6 +1,6 @@
 {
-  "name": "@adyaui/vue",
-  "version": "0.0.1",
+  "name": "adya-ui-vue",
+  "version": "1.0.2",
   "description": "Vue wrapper components for AdyaUI",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -14,9 +14,21 @@
   },
   "keywords": [
     "vue",
-    "ui",
-    "components",
-    "adyaui"
+    "ui-components",
+    "vue-components",
+    "adya-ui",
+    "modern-ui",
+    "design-system",
+    "typescript",
+    "frontend",
+    "component-library",
+    "ui-kit",
+    "vue-ui",
+    "vue3",
+    "beautiful-ui",
+    "colorful-ui",
+    "web-components",
+    "custom-elements"
   ],
   "author": "AdyaUI Team",
   "license": "MIT",
@@ -24,7 +36,7 @@
     "vue": ">=3.0.0"
   },
   "dependencies": {
-    "@adyaui/core": "workspace:*"
+    "adya-ui-core": "^1.0.0"
   },
   "devDependencies": {
     "typescript": "^5.3.2",

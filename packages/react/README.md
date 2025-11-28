@@ -1,19 +1,31 @@
-# @adyaui/react
+# adya-ui-react
 
 React wrapper components for AdyaUI - providing a clean, React-style API for AdyaUI Web Components.
 
 ## Installation
 
 ```bash
-npm install @adyaui/react
-# or
-pnpm add @adyaui/react
+# Install both packages (required)
+npm install adya-ui-core adya-ui-react
+
+# or with pnpm
+pnpm add adya-ui-core adya-ui-react
+
+# or with yarn
+yarn add adya-ui-core adya-ui-react
 ```
+
+**Note**: `adya-ui-core` is required as it contains the actual Web Components that `adya-ui-react` wraps.
 
 ## Usage
 
 ```jsx
-import { Button, TextField, Card, Alert } from '@adyaui/react';
+// Import React components
+import { Button, TextField, Card, Alert } from 'adya-ui-react';
+// Import core package to register Web Components
+import 'adya-ui-core';
+// Import theme CSS
+import 'adya-ui-core/dist/theme.css';
 
 function App() {
   return (
@@ -55,7 +67,7 @@ function App() {
 All components are fully typed:
 
 ```tsx
-import { Button, ButtonProps } from '@adyaui/react';
+import { Button, ButtonProps } from 'adya-ui-react';
 
 const MyButton: React.FC<ButtonProps> = (props) => {
   return <Button {...props} />;

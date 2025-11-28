@@ -6,10 +6,12 @@
 
 **A beautiful, accessible, and framework-agnostic UI component library**
 
-[![npm version](https://img.shields.io/npm/v/@adyaui/core.svg)](https://www.npmjs.com/package/@adyaui/core)
+[![npm version](https://img.shields.io/npm/v/adya-ui-core.svg)](https://www.npmjs.com/package/adya-ui-core)
+[![npm version](https://img.shields.io/npm/v/adya-ui-react.svg)](https://www.npmjs.com/package/adya-ui-react)
+[![npm version](https://img.shields.io/npm/v/adya-ui-vue.svg)](https://www.npmjs.com/package/adya-ui-vue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)](https://www.typescriptlang.org/)
-[![Bundle Size](https://img.shields.io/bundlephobia/minzip/@adyaui/core)](https://bundlephobia.com/package/@adyaui/core)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/adya-ui-core)](https://bundlephobia.com/package/adya-ui-core)
 
 [Documentation](https://adyaui.dev) · [Components](https://adyaui.dev/components) · [Examples](https://adyaui.dev/examples) · [Playground](https://adyaui.dev/playground)
 
@@ -19,6 +21,7 @@
 
 ## ✨ Features
 
+- 🤖 **AI-Powered Generation** - Generate components using natural language prompts (NEW!)
 - 🎨 **Beautiful Design** - Modern, sleek components inspired by Material Design
 - 🔧 **Framework Agnostic** - Works with React, Vue, Angular, Svelte, and vanilla JS
 - ♿ **Accessible** - WCAG 2.1 AA compliant with full keyboard navigation
@@ -38,29 +41,23 @@
 
 ```bash
 # Core (Web Components)
-npm install @adyaui/core
+npm install adya-ui-core
 
 # React
-npm install @adyaui/react
+npm install adya-ui-react
 
 # Vue
-npm install @adyaui/vue
-
-# Angular
-npm install @adyaui/angular
-
-# Svelte
-npm install @adyaui/svelte
+npm install adya-ui-vue
 ```
 
 ### Using CDN
 
 ```html
 <!-- Core library -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/@adyaui/core"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/adya-ui-core"></script>
 
 <!-- Theme (optional) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@adyaui/core/dist/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/adya-ui-core/dist/theme.css">
 ```
 
 ---
@@ -158,6 +155,49 @@ export class AppComponent {
   }
 }
 ```
+
+---
+
+## 🤖 AI-Powered Component Generation
+
+**NEW!** Generate UI components using natural language with AdyaUI AI CLI.
+
+### Quick Start
+
+```bash
+# Install the CLI
+npm install -g @adyaui/cli
+
+# Initialize in your project
+cd my-app
+adya-ui init
+
+# Generate components with AI
+adya-ui ai
+```
+
+### Example Usage
+
+```bash
+# Create a login page
+adya-ui ai -p "Create a login page with email and password fields"
+
+# Build a product grid
+adya-ui ai -p "Build a product grid with 3 columns, showing image, title, price, and add to cart button"
+
+# Generate a dashboard
+adya-ui ai -p "Create a dashboard with sidebar, header, and 4 stat cards"
+```
+
+### What Makes This Special?
+
+- 🎯 **Intent-Based**: Describe what you want, not how to build it
+- 🚀 **Framework-Aware**: Generates React, Vue, or vanilla code automatically
+- 📚 **Pattern Library**: Knows common UI patterns (login, checkout, dashboard, etc.)
+- ✨ **Production-Ready**: Generates clean, typed, accessible code
+- 🔄 **Iterative**: Preview before creating, refine with follow-up prompts
+
+[Learn more about AI CLI →](./CLI_GUIDE.md) | [Example Prompts →](./AI_PROMPTS.md)
 
 ---
 

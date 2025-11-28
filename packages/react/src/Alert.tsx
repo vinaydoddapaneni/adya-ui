@@ -1,5 +1,5 @@
 import React from 'react';
-import '@adyaui/core';
+import 'adya-ui-core';
 
 export interface AlertProps extends React.HTMLAttributes<HTMLElement> {
   severity?: 'success' | 'info' | 'warning' | 'error';

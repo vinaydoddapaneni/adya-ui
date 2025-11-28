@@ -1,14 +1,21 @@
-# @adyaui/vue
+# adya-ui-vue
 
 Vue wrapper components for AdyaUI - providing a clean, Vue-style API for AdyaUI Web Components.
 
 ## Installation
 
 ```bash
-npm install @adyaui/vue
-# or
-pnpm add @adyaui/vue
+# Install both packages (required)
+npm install adya-ui-core adya-ui-vue
+
+# or with pnpm
+pnpm add adya-ui-core adya-ui-vue
+
+# or with yarn
+yarn add adya-ui-core adya-ui-vue
 ```
+
+**Note**: `adya-ui-core` is required as it contains the actual Web Components that `adya-ui-vue` wraps.
 
 ## Usage
 
@@ -30,7 +37,12 @@ pnpm add @adyaui/vue
 </template>
 
 <script setup>
-import { AuiButton, AuiTextField, AuiCard, AuiAlert } from '@adyaui/vue';
+// Import Vue components
+import { AuiButton, AuiTextField, AuiCard, AuiAlert } from 'adya-ui-vue';
+// Import core package to register Web Components
+import 'adya-ui-core';
+// Import theme CSS
+import 'adya-ui-core/dist/theme.css';
 </script>
 ```
 
@@ -54,7 +66,7 @@ All components are fully typed and work seamlessly with TypeScript:
 
 ```vue
 <script setup lang="ts">
-import { AuiButton } from '@adyaui/vue';
+import { AuiButton } from 'adya-ui-vue';
 </script>
 ```
 
