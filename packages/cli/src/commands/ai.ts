@@ -108,23 +108,65 @@ export async function aiCommand(options: AIOptions = {}): Promise<void> {
         return;
       }
 
-      // Show preview and confirm
+      // Show preview and interactive refinement loop
       console.log(chalk.cyan(`\n📁 Files to be created:`));
       console.log(chalk.gray(`  ${generatedCode.filename}`));
       if (generatedCode.styleFilename) {
         console.log(chalk.gray(`  ${generatedCode.styleFilename}`));
       }
 
-      const { confirm } = await inquirer.prompt([
-        {
-          type: 'confirm',
-          name: 'confirm',
-          message: 'Create these files?',
-          default: true,
-        },
-      ]);
+      let finalCode = generatedCode;
+      let finalIntent = intent;
+      let shouldWrite = false;
 
-      if (!confirm) {
+      // Interactive refinement loop
+      while (true) {
+        const { action } = await inquirer.prompt([
+          {
+            type: 'list',
+            name: 'action',
+            message: 'What would you like to do?',
+            choices: [
+              { name: 'Approve and create files', value: 'approve' },
+              { name: 'Refine with feedback', value: 'refine' },
+              { name: 'Cancel', value: 'cancel' },
+            ],
+          },
+        ]);
+
+        if (action === 'approve') {
+          shouldWrite = true;
+          break;
+        } else if (action === 'cancel') {
+          console.log(chalk.yellow('\nCancelled.\n'));
+          return;
+        } else if (action === 'refine') {
+          const { feedback } = await inquirer.prompt([
+            {
+              type: 'input',
+              name: 'feedback',
+              message: 'What would you like to change?',
+              validate: (input) => input.trim().length > 0 || 'Please provide feedback',
+            },
+          ]);
+
+          // Regenerate with feedback
+          spinner.start('Refining with your feedback...');
+          const refinedPrompt = `${prompt}\n\nFeedback: ${feedback}`;
+          finalIntent = await aiService.analyzePrompt(refinedPrompt, context);
+          finalCode = await generator.generate(finalIntent);
+          spinner.succeed('Refinement complete');
+
+          // Show updated preview
+          console.log(chalk.cyan(`\n📁 Updated files:`));
+          console.log(chalk.gray(`  ${finalCode.filename}`));
+          if (finalCode.styleFilename) {
+            console.log(chalk.gray(`  ${finalCode.styleFilename}`));
+          }
+        }
+      }
+
+      if (!shouldWrite) {
         console.log(chalk.yellow('\nCancelled.\n'));
         return;
       }
@@ -137,7 +179,7 @@ export async function aiCommand(options: AIOptions = {}): Promise<void> {
         : path.join(process.cwd(), context.componentDir);
 
       const fileWriter = new FileWriter(outputDir);
-      const result = await fileWriter.write(generatedCode, { force: true });
+      const result = await fileWriter.write(finalCode, { force: true });
 
       if (!result.success) {
         spinner.fail('Failed to write files');
