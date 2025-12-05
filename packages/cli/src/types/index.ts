@@ -18,6 +18,14 @@ export interface ProjectContext {
   styleFormat: 'css' | 'css-modules' | 'styled-components' | 'emotion';
   componentDir: string;
   rootDir: string;
+  // Enhanced context from project scanner
+  discoveredComponents?: string[];
+  componentMetadata?: ComponentMetadata[];
+  designTokens?: DesignTokens;
+  namingConventions?: NamingConventions;
+  routing?: string;
+  stateManagement?: string;
+  existingLayouts?: string[];
 }
 
 export interface ComponentIntent {
@@ -98,6 +106,19 @@ export interface PropDefinition {
 export interface SlotDefinition {
   name: string;
   description: string;
+}
+
+export interface DesignTokens {
+  primaryColor?: string;
+  secondaryColor?: string;
+  fontFamily?: string;
+  spacing?: string;
+  borderRadius?: string;
+}
+
+export interface NamingConventions {
+  componentCase: 'PascalCase' | 'camelCase' | 'kebab-case';
+  fileCase: 'PascalCase' | 'camelCase' | 'kebab-case';
 }
 
 export interface UIPattern {

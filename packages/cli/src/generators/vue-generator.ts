@@ -1,11 +1,13 @@
 import prettier from 'prettier';
+
 import type {
   ComponentIntent,
   ComponentReference,
   GeneratedCode,
   LayoutDefinition,
   StateDefinition,
-  EventDefinition
+  EventDefinition,
+  ProjectContext
 } from '../types/index.js';
 
 /**
@@ -13,9 +15,15 @@ import type {
  */
 export class VueGenerator {
   private typescript: boolean;
+  private context?: ProjectContext;
 
-  constructor(typescript: boolean = true) {
-    this.typescript = typescript;
+  constructor(contextOrTypescript: ProjectContext | boolean = true) {
+    if (typeof contextOrTypescript === 'boolean') {
+      this.typescript = contextOrTypescript;
+    } else {
+      this.context = contextOrTypescript;
+      this.typescript = contextOrTypescript.typescript;
+    }
   }
 
   /**
@@ -231,10 +239,14 @@ const props = defineProps<Props>();`;
   /**
    * Generate CSS styles
    */
-  private generateStyles(layout?: LayoutDefinition, styling?: any): string {
+  private generateStyles(layout?: LayoutDefinition, _styling?: any): string {
+    // Use design tokens from context if available
+    const spacing = this.context?.designTokens?.spacing || '1rem';
+    const gap = layout?.gap || spacing;
+
     if (!layout) {
       return `.container {
-  padding: 1rem;
+  padding: ${spacing};
 }`;
     }
 
@@ -242,8 +254,8 @@ const props = defineProps<Props>();`;
       return `.grid {
   display: grid;
   grid-template-columns: repeat(${layout.columns || 3}, 1fr);
-  gap: ${layout.gap || '1rem'};
-  padding: 1rem;
+  gap: ${gap};
+  padding: ${spacing};
 }`;
     }
 
@@ -269,8 +281,8 @@ const props = defineProps<Props>();`;
   flex-direction: ${layout.direction || 'column'};
   align-items: ${alignMap[layout.align || 'stretch'] || layout.align || 'stretch'};
   justify-content: ${justifyMap[layout.justify || 'start'] || layout.justify || 'flex-start'};
-  gap: ${layout.gap || '1rem'};
-  padding: 1rem;
+  gap: ${gap};
+  padding: ${spacing};
 }`;
   }
 

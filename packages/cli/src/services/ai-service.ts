@@ -31,8 +31,8 @@ export abstract class BaseAIService implements AIService {
   /**
    * Build system prompt with component catalog
    */
-  protected buildSystemPrompt(): string {
-    return `You are an expert UI developer assistant for AdyaUI, a framework-agnostic component library.
+  protected buildSystemPrompt(_context?: ProjectContext): string {
+    let prompt = `You are an expert UI developer assistant for AdyaUI, a framework-agnostic component library.
 
 Your task is to analyze user requests and generate component specifications in JSON format.
 
@@ -56,8 +56,24 @@ Common UI Patterns:
 - contact-form: Contact form
 - checkout-form: E-commerce checkout
 - user-profile: User profile page
+`;
 
-Response Format:
+    // Add component metadata if available
+    if (_context?.componentMetadata && _context.componentMetadata.length > 0) {
+      prompt += `\nComponent Details (Props & Interfaces):\n`;
+      for (const component of _context.componentMetadata) {
+        prompt += `- ${component.name}: ${component.description}\n`;
+        if (component.props.length > 0) {
+          const propsStr = component.props
+            .map(p => `${p.name}${p.required ? '' : '?'}: ${p.type}`)
+            .join(', ');
+          prompt += `  Props: { ${propsStr} }\n`;
+        }
+      }
+      prompt += '\n';
+    }
+
+    prompt += `Response Format:
 Return ONLY a valid JSON object with this structure:
 {
   "type": "page" | "component" | "layout",
@@ -94,6 +110,8 @@ Guidelines:
 8. Keep components focused and reusable
 9. Use meaningful variable names
 10. Return ONLY valid JSON, no markdown or explanations`;
+
+    return prompt;
   }
 
   /**

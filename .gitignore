@@ -15,6 +15,7 @@ coverage/
 .env
 .env.local
 .env.*.local
+.adyaui.json
 
 # IDEs
 .vscode/
