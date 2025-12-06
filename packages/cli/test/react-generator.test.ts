@@ -22,10 +22,12 @@ describe('ReactGenerator', () => {
     const result = await generator.generate(intent);
 
     expect(result.filename).toBe('TestButton.tsx');
-    expect(result.code).toContain('import React from \'react\'');
-    expect(result.code).toContain('import { AuiButton } from \'@adyaui/react\'');
+    expect(result.code).toContain("import React from 'react'");
+    expect(result.code).toContain("import styles from './TestButton.module.css'");
     expect(result.code).toContain('export const TestButton: React.FC<TestButtonProps>');
-    expect(result.code).toContain('<AuiButton variant="primary">Click Me</AuiButton>');
+    // Aui components are now converted to standard HTML elements
+    expect(result.code).toContain('<button');
+    expect(result.code).toContain('Click Me');
   });
 
   it('should generate a component with state', async () => {
