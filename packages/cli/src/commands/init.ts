@@ -1,9 +1,10 @@
-import inquirer from 'inquirer';
 import chalk from 'chalk';
+import inquirer from 'inquirer';
 import ora from 'ora';
-import { ProjectDetector } from '../utils/project-detector.js';
-import { ConfigManager } from '../utils/config-manager.js';
+
 import type { InitOptions } from '../types/index.js';
+import { ConfigManager } from '../utils/config-manager.js';
+import { ProjectDetector } from '../utils/project-detector.js';
 
 /**
  * Initialize AdyaUI in the project

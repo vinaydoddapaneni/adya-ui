@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base/aui-element';
+
 import { styles } from './aui-app-bar.styles';
 /**
  * AuiAppBar - A top app bar component

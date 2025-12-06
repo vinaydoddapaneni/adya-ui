@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+
 import { OpenAIService } from '../src/services/openai-service.js';
 import type { ProjectContext } from '../src/types/index.js';
 

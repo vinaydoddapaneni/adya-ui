@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+
 import { createTestElement, setupTest, teardownTest, waitForComponentUpdate } from './test-utils';
 
 describe('test-utils', () => {

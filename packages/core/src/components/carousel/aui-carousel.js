@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base/aui-element';
+
 import { styles } from './aui-carousel.styles';
 /**
  * AuiCarousel - A carousel/slider component

@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base/aui-element';
+
 import { styles } from './aui-linear-progress.styles';
 /**
  * AuiLinearProgress - A linear progress indicator

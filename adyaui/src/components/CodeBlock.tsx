@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import Prism from 'prismjs';
+import React, { useState } from 'react';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-jsx';

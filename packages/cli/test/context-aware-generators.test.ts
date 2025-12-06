@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { ReactGenerator } from '../src/generators/react-generator.js';
 import { VueGenerator } from '../src/generators/vue-generator.js';
 import type { ProjectContext, ComponentIntent } from '../src/types/index.js';

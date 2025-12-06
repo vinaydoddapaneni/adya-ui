@@ -1,14 +1,16 @@
-import express from 'express';
-import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
+
+import cors from 'cors';
+import express from 'express';
+
+import { ollamaClient } from './ai/ollama-client.js';
 import { config } from './config/index.js';
 import { componentRegistry } from './metadata/registry.js';
-import { ollamaClient } from './ai/ollama-client.js';
-import { suggestRouter } from './routes/suggest.js';
-import { generateUIRouter } from './routes/generate-ui.js';
-import { themeRouter } from './routes/theme.js';
 import { analyzeRouter } from './routes/analyze.js';
+import { generateUIRouter } from './routes/generate-ui.js';
+import { suggestRouter } from './routes/suggest.js';
+import { themeRouter } from './routes/theme.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -76,7 +78,7 @@ app.post('/api/components/refresh', async (req, res) => {
 });
 
 // Error handling middleware
-app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: Error, req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error('Server error:', err);
   res.status(500).json({
     success: false,

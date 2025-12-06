@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base/aui-element';
+
 import { styles } from './aui-circular-progress.styles';
 export class AuiCircularProgress extends AuiElement {
     static get observedAttributes() {

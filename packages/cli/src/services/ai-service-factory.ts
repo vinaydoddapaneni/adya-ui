@@ -1,11 +1,12 @@
-import { AIService } from './ai-service.js';
-import { OpenAIService } from './openai-service.js';
-import { HuggingFaceService } from './huggingface-service.js';
-import { AnthropicService } from './anthropic-service.js';
-import { GoogleService } from './google-service.js';
-import { CohereService } from './cohere-service.js';
-import { MistralService } from './mistral-service.js';
 import type { AIServiceOptions } from '../types/index.js';
+
+import { AIService } from './ai-service.js';
+import { AnthropicService } from './anthropic-service.js';
+import { CohereService } from './cohere-service.js';
+import { GoogleService } from './google-service.js';
+import { HuggingFaceService } from './huggingface-service.js';
+import { MistralService } from './mistral-service.js';
+import { OpenAIService } from './openai-service.js';
 
 /**
  * Factory for creating AI services

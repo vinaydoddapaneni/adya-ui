@@ -1,7 +1,7 @@
-import fs from 'fs-extra';
 import path from 'path';
-import { execa } from 'execa';
+
 import chalk from 'chalk';
+import fs from 'fs-extra';
 
 const TEMP_DIR = path.join(process.cwd(), 'temp-test-project');
 

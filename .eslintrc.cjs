@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  ignorePatterns: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/coverage/**', '**/*.min.js'],
   env: {
     browser: true,
     es2021: true,
@@ -19,7 +20,6 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'import'],
   rules: {
-    '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-unused-vars': [
       'error',
       { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
@@ -32,7 +32,11 @@ module.exports = {
         alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
-    'no-console': ['warn', { allow: ['warn', 'error'] }],
+    'no-console': ['warn', { allow: ['log', 'info', 'warn', 'error'] }],
+    'import/no-unresolved': ['error', { ignore: ['^react$', '^react-dom$'] }],
+    'import/no-named-as-default-member': 'off',
+    'import/no-named-as-default': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   settings: {
     'import/resolver': {

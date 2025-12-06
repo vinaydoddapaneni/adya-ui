@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+
 import { config } from '../config/index.js';
 
 export interface ComponentProperty {

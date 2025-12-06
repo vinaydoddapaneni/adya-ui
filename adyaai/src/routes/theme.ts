@@ -1,7 +1,8 @@
 import { Router, Request, Response } from 'express';
+
 import { ollamaClient } from '../ai/ollama-client.js';
-import { PromptBuilder } from '../ai/prompts.js';
 import { ResponseParser } from '../ai/parser.js';
+import { PromptBuilder } from '../ai/prompts.js';
 import { ThemeRequestSchema } from '../utils/validation.js';
 
 export const themeRouter = Router();

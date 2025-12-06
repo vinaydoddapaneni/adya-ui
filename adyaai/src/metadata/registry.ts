@@ -1,6 +1,8 @@
 import fs from 'fs/promises';
 import path from 'path';
+
 import { config } from '../config/index.js';
+
 import { ComponentMetadata, MetadataExtractor } from './extractor.js';
 
 /**

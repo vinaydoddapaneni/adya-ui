@@ -1,8 +1,9 @@
 import { Router, Request, Response } from 'express';
-import { componentRegistry } from '../metadata/registry.js';
+
 import { ollamaClient } from '../ai/ollama-client.js';
-import { PromptBuilder } from '../ai/prompts.js';
 import { ResponseParser } from '../ai/parser.js';
+import { PromptBuilder } from '../ai/prompts.js';
+import { componentRegistry } from '../metadata/registry.js';
 import { SuggestRequestSchema } from '../utils/validation.js';
 
 export const suggestRouter = Router();

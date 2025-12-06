@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base/aui-element';
+
 import { styles } from './aui-tabs.styles';
 /**
  * AuiTabs - A component for switching between different views

@@ -1,5 +1,7 @@
-import fs from 'fs-extra';
 import path from 'path';
+
+import fs from 'fs-extra';
+
 import type { AdyaUIConfig, Framework } from '../types/index.js';
 
 const CONFIG_FILENAME = '.adyaui.json';

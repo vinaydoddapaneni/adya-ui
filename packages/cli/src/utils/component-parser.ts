@@ -1,5 +1,7 @@
-import fs from 'fs-extra';
 import path from 'path';
+
+import fs from 'fs-extra';
+
 import type { ComponentMetadata, PropDefinition } from '../types/index.js';
 
 /**
@@ -12,7 +14,6 @@ export class ComponentParser {
   async parse(filePath: string): Promise<ComponentMetadata | null> {
     try {
       const content = await fs.readFile(filePath, 'utf-8');
-      const filename = path.basename(filePath);
       const name = path.basename(filePath, path.extname(filePath));
       
       // Skip index files and test files
@@ -65,9 +66,9 @@ export class ComponentParser {
         const propMatch = trimmed.match(/^(\w+)(\?)?:\s*([^;]+);/);
         
         if (propMatch) {
-          const [, name, optional, type] = propMatch;
+          const [, propName, optional, type] = propMatch;
           props.push({
-            name,
+            name: propName,
             type: type.trim(),
             required: !optional,
             description: '', // TODO: Extract JSDoc comments

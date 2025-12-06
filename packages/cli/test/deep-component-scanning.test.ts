@@ -1,16 +1,15 @@
-import { describe, it, expect, vi } from 'vitest';
-import path from 'path';
 import fs from 'fs-extra';
-import { ComponentParser } from '../src/utils/component-parser.js';
-import { ProjectScanner } from '../src/utils/project-scanner.js';
+import { describe, it, expect, vi } from 'vitest';
+
 import { BaseAIService } from '../src/services/ai-service.js';
 import type { ProjectContext, ComponentIntent } from '../src/types/index.js';
+import { ComponentParser } from '../src/utils/component-parser.js';
 
 // Mock BaseAIService since it's abstract
 class TestAIService extends BaseAIService {
   getDefaultModel() { return 'test-model'; }
-  async analyzePrompt(prompt: string, context: ProjectContext): Promise<ComponentIntent> {
-    return {} as any;
+  async analyzePrompt(_prompt: string, _context: ProjectContext): Promise<ComponentIntent> {
+    return {} as ComponentIntent;
   }
   public getSystemPrompt(context: ProjectContext) {
     return this.buildSystemPrompt(context);

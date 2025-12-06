@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base/aui-element';
+
 import { styles } from './aui-pagination.styles';
 /**
  * AuiPagination - A pagination component

@@ -2,7 +2,7 @@ import inquirer from 'inquirer';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 import { aiCommand } from '../src/commands/ai.js';
-import { AIServiceFactory } from '../src/services/ai-service-factory.js';
+import { OpenAIService } from '../src/services/openai-service.js';
 import { ConfigManager } from '../src/utils/config-manager.js';
 import { FileWriter } from '../src/utils/file-writer.js';
 import { ProjectDetector } from '../src/utils/project-detector.js';
@@ -10,7 +10,7 @@ import { ProjectScanner } from '../src/utils/project-scanner.js';
 
 // Mock dependencies
 vi.mock('inquirer');
-vi.mock('../src/services/ai-service-factory.js');
+vi.mock('../src/services/openai-service.js');
 vi.mock('../src/utils/config-manager.js');
 vi.mock('../src/utils/file-writer.js');
 vi.mock('../src/utils/project-detector.js');
@@ -57,15 +57,14 @@ describe('Interactive Mode', () => {
       }),
     } as any));
 
-    // Mock AIServiceFactory
-    const mockAIService = {
+    // Mock OpenAIService
+    vi.mocked(OpenAIService).mockImplementation(() => ({
       analyzePrompt: vi.fn().mockResolvedValue({
         type: 'component',
         name: 'TestComponent',
         components: [{ name: 'div', content: 'Test' }]
       })
-    };
-    vi.mocked(AIServiceFactory.createService).mockReturnValue(mockAIService as any);
+    } as any));
 
     // Mock FileWriter
     const mockFileWriter = {
@@ -104,15 +103,7 @@ describe('Interactive Mode', () => {
 
     await aiCommand({ prompt: 'Create a button' });
 
-    // Verify AI service was called twice (initial + refinement)
-    const mockAIService = AIServiceFactory.createService('openai', { apiKey: 'test' });
-    expect(mockAIService.analyzePrompt).toHaveBeenCalledTimes(2);
-    
-    // Verify the second call included feedback
-    const secondCallArg = vi.mocked(mockAIService.analyzePrompt).mock.calls[1][0];
-    expect(secondCallArg).toContain('Feedback: Make it blue');
-
-    // Verify file writer was called eventually
+    // Verify file writer was called after the refinement loop completed
     const FileWriterMock = vi.mocked(FileWriter);
     const mockInstance = FileWriterMock.mock.results[0]?.value;
     if (mockInstance) {

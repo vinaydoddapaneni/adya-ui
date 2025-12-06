@@ -1,0 +1,377 @@
+﻿
+C:\Users\vinay\Downloads\AdyaUI\adyaai\src\ai\parser.ts
+  63:5  warning  Unexpected console statement  no-console
+  72:9  warning  Unexpected console statement  no-console
+  84:9  warning  Unexpected console statement  no-console
+  96:9  warning  Unexpected console statement  no-console
+
+C:\Users\vinay\Downloads\AdyaUI\adyaai\src\config\index.ts
+  10:1  warning  Caution: `dotenv` also has a named export `config`. Check if you meant to write `import {config} from 'dotenv'` instead  import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\adyaai\src\metadata\extractor.ts
+  346:7  warning  Unexpected console statement  no-console
+  360:3  warning  Unexpected console statement  no-console
+  361:3  warning  Unexpected console statement  no-console
+
+C:\Users\vinay\Downloads\AdyaUI\adyaai\src\metadata\registry.ts
+  29:7  warning  Unexpected console statement  no-console
+  32:7  warning  Unexpected console statement  no-console
+  42:5  warning  Unexpected console statement  no-console
+
+C:\Users\vinay\Downloads\AdyaUI\adyaai\src\server.ts
+   22:9   warning  Caution: `express` also has a named export `json`. Check if you meant to write `import {json} from 'express'` instead              import/no-named-as-default-member
+   23:9   warning  Caution: `express` also has a named export `urlencoded`. Check if you meant to write `import {urlencoded} from 'express'` instead  import/no-named-as-default-member
+   27:9   warning  Caution: `express` also has a named export `static`. Check if you meant to write `import {static} from 'express'` instead          import/no-named-as-default-member
+   81:67  error    'next' is defined but never used. Allowed unused args must match /^_/u                                                             @typescript-eslint/no-unused-vars
+   92:5   warning  Unexpected console statement                                                                                                       no-console
+   95:5   warning  Unexpected console statement                                                                                                       no-console
+   97:5   warning  Unexpected console statement                                                                                                       no-console
+  100:5   warning  Unexpected console statement                                                                                                       no-console
+  106:7   warning  Unexpected console statement                                                                                                       no-console
+  113:9   warning  Unexpected console statement                                                                                                       no-console
+  120:7   warning  Unexpected console statement                                                                                                       no-console
+  121:7   warning  Unexpected console statement                                                                                                       no-console
+  122:7   warning  Unexpected console statement                                                                                                       no-console
+  123:7   warning  Unexpected console statement                                                                                                       no-console
+  124:7   warning  Unexpected console statement                                                                                                       no-console
+  125:7   warning  Unexpected console statement                                                                                                       no-console
+  126:7   warning  Unexpected console statement                                                                                                       no-console
+  127:7   warning  Unexpected console statement                                                                                                       no-console
+  128:7   warning  Unexpected console statement                                                                                                       no-console
+  129:7   warning  Unexpected console statement                                                                                                       no-console
+  130:7   warning  Unexpected console statement                                                                                                       no-console
+  131:7   warning  Unexpected console statement                                                                                                       no-console
+  132:7   warning  Unexpected console statement                                                                                                       no-console
+  133:7   warning  Unexpected console statement                                                                                                       no-console
+  134:7   warning  Unexpected console statement                                                                                                       no-console
+
+C:\Users\vinay\Downloads\AdyaUI\adyaui\src\components\CodeBlock.tsx
+  31:23  warning  Caution: `Prism` also has a named export `highlight`. Check if you meant to write `import {highlight} from 'prismjs'` instead  import/no-named-as-default-member
+  33:5   warning  Caution: `Prism` also has a named export `languages`. Check if you meant to write `import {languages} from 'prismjs'` instead  import/no-named-as-default-member
+  33:34  warning  Caution: `Prism` also has a named export `languages`. Check if you meant to write `import {languages} from 'prismjs'` instead  import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\adyaui\src\main.tsx
+  6:1  warning  Caution: `ReactDOM` also has a named export `createRoot`. Check if you meant to write `import {createRoot} from 'react-dom/client'` instead  import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\commands\ai.ts
+   19:3   warning  Unexpected console statement                                                       no-console
+   27:7   warning  Unexpected console statement                                                       no-console
+   30:7   warning  Unexpected console statement                                                       no-console
+   33:11  error    'config' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+   39:7   warning  Unexpected console statement                                                       no-console
+   40:7   warning  Unexpected console statement                                                       no-console
+   41:7   warning  Unexpected console statement                                                       no-console
+   42:7   warning  Unexpected console statement                                                       no-console
+   69:5   warning  Unexpected console statement                                                       no-console
+   70:5   warning  Unexpected console statement                                                       no-console
+   82:7   warning  Unexpected console statement                                                       no-console
+   83:7   warning  Unexpected console statement                                                       no-console
+   84:7   warning  Unexpected console statement                                                       no-console
+   86:9   warning  Unexpected console statement                                                       no-console
+  106:9   warning  Unexpected console statement                                                       no-console
+  108:9   warning  Unexpected console statement                                                       no-console
+  109:9   warning  Unexpected console statement                                                       no-console
+  114:7   warning  Unexpected console statement                                                       no-console
+  115:7   warning  Unexpected console statement                                                       no-console
+  117:9   warning  Unexpected console statement                                                       no-console
+  125:14  error    Unexpected constant condition                                                      no-constant-condition
+  143:11  warning  Unexpected console statement                                                       no-console
+  163:11  warning  Unexpected console statement                                                       no-console
+  164:11  warning  Unexpected console statement                                                       no-console
+  166:13  warning  Unexpected console statement                                                       no-console
+  172:9   warning  Unexpected console statement                                                       no-console
+  195:7   warning  Unexpected console statement                                                       no-console
+  196:7   warning  Unexpected console statement                                                       no-console
+  198:9   warning  Unexpected console statement                                                       no-console
+  201:7   warning  Unexpected console statement                                                       no-console
+  202:7   warning  Unexpected console statement                                                       no-console
+  203:7   warning  Unexpected console statement                                                       no-console
+  204:7   warning  Unexpected console statement                                                       no-console
+  211:9   warning  Unexpected console statement                                                       no-console
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\commands\catalog.ts
+   16:3  warning  Unexpected console statement  no-console
+   17:3  warning  Unexpected console statement  no-console
+   18:3  warning  Unexpected console statement  no-console
+   21:5  warning  Unexpected console statement  no-console
+   23:7  warning  Unexpected console statement  no-console
+   28:5  warning  Unexpected console statement  no-console
+   30:7  warning  Unexpected console statement  no-console
+   34:3  warning  Unexpected console statement  no-console
+   35:3  warning  Unexpected console statement  no-console
+   55:3  warning  Unexpected console statement  no-console
+   78:5  warning  Unexpected console statement  no-console
+   82:3  warning  Unexpected console statement  no-console
+   95:3  warning  Unexpected console statement  no-console
+   99:5  warning  Unexpected console statement  no-console
+  101:7  warning  Unexpected console statement  no-console
+  105:3  warning  Unexpected console statement  no-console
+  112:3  warning  Unexpected console statement  no-console
+  120:9  warning  Unexpected console statement  no-console
+  124:7  warning  Unexpected console statement  no-console
+  136:9  warning  Unexpected console statement  no-console
+  140:7  warning  Unexpected console statement  no-console
+  173:9  warning  Unexpected console statement  no-console
+  178:5  warning  Unexpected console statement  no-console
+  179:5  warning  Unexpected console statement  no-console
+  180:5  warning  Unexpected console statement  no-console
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\commands\init.ts
+   13:3  warning  Unexpected console statement  no-console
+   45:9  warning  Unexpected console statement  no-console
+  108:5  warning  Unexpected console statement  no-console
+  109:5  warning  Unexpected console statement  no-console
+  110:5  warning  Unexpected console statement  no-console
+  111:5  warning  Unexpected console statement  no-console
+  112:5  warning  Unexpected console statement  no-console
+  113:5  warning  Unexpected console statement  no-console
+  114:5  warning  Unexpected console statement  no-console
+  117:5  warning  Unexpected console statement  no-console
+  118:5  warning  Unexpected console statement  no-console
+  119:5  warning  Unexpected console statement  no-console
+  120:5  warning  Unexpected console statement  no-console
+  121:5  warning  Unexpected console statement  no-console
+  122:5  warning  Unexpected console statement  no-console
+  123:5  warning  Unexpected console statement  no-console
+  126:7  warning  Unexpected console statement  no-console
+  127:7  warning  Unexpected console statement  no-console
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\generators\react-generator.ts
+   95:80  warning  Unexpected any. Specify a different type                                                                                     @typescript-eslint/no-explicit-any
+  185:50  warning  Unexpected any. Specify a different type                                                                                     @typescript-eslint/no-explicit-any
+  209:64  warning  Unexpected any. Specify a different type                                                                                     @typescript-eslint/no-explicit-any
+  261:20  warning  Caution: `prettier` also has a named export `format`. Check if you meant to write `import {format} from 'prettier'` instead  import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\generators\vue-generator.ts
+  102:51  warning  Unexpected any. Specify a different type                                                                                     @typescript-eslint/no-explicit-any
+  163:48  warning  Unexpected any. Specify a different type                                                                                     @typescript-eslint/no-explicit-any
+  242:64  warning  Unexpected any. Specify a different type                                                                                     @typescript-eslint/no-explicit-any
+  294:20  warning  Caution: `prettier` also has a named export `format`. Check if you meant to write `import {format} from 'prettier'` instead  import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\index.ts
+  56:18  error    'components' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  56:30  error    'options' is defined but never used. Allowed unused args must match /^_/u     @typescript-eslint/no-unused-vars
+  57:5   warning  Unexpected console statement                                                  no-console
+  58:5   warning  Unexpected console statement                                                  no-console
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\services\anthropic-service.ts
+  1:8  warning  Using exported name 'Anthropic' as identifier for default import  import/no-named-as-default
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\services\openai-service.ts
+  1:8  warning  Using exported name 'OpenAI' as identifier for default import  import/no-named-as-default
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\types\index.ts
+   37:26  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   44:26  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   68:17  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  102:13  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\utils\component-parser.ts
+  16:29  warning  Caution: `fs` also has a named export `readFile`. Check if you meant to write `import {readFile} from 'fs-extra'` instead  import/no-named-as-default-member
+  17:13  error    'filename' is assigned a value but never used. Allowed unused vars must match /^_/u                                        @typescript-eslint/no-unused-vars
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\utils\config-manager.ts
+   46:15  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+   47:28  warning  Caution: `fs` also has a named export `readJSON`. Check if you meant to write `import {readJSON} from 'fs-extra'` instead      import/no-named-as-default-member
+   61:11  warning  Caution: `fs` also has a named export `writeJSON`. Check if you meant to write `import {writeJSON} from 'fs-extra'` instead    import/no-named-as-default-member
+   75:18  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  111:11  warning  Caution: `fs` also has a named export `writeJSON`. Check if you meant to write `import {writeJSON} from 'fs-extra'` instead    import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\utils\error-handler.ts
+   60:5   warning  Unexpected console statement                    no-console
+   67:5   warning  Unexpected console statement                    no-console
+   70:7   warning  Unexpected console statement                    no-console
+   71:7   warning  Unexpected console statement                    no-console
+   72:7   warning  Unexpected console statement                    no-console
+   74:7   warning  Unexpected console statement                    no-console
+   75:7   warning  Unexpected console statement                    no-console
+   76:7   warning  Unexpected console statement                    no-console
+   78:7   warning  Unexpected console statement                    no-console
+   79:7   warning  Unexpected console statement                    no-console
+   80:7   warning  Unexpected console statement                    no-console
+   82:7   warning  Unexpected console statement                    no-console
+   83:7   warning  Unexpected console statement                    no-console
+   84:7   warning  Unexpected console statement                    no-console
+   86:7   warning  Unexpected console statement                    no-console
+   87:7   warning  Unexpected console statement                    no-console
+   88:7   warning  Unexpected console statement                    no-console
+   96:5   warning  Unexpected console statement                    no-console
+   99:7   warning  Unexpected console statement                    no-console
+  103:7   warning  Unexpected console statement                    no-console
+  104:7   warning  Unexpected console statement                    no-console
+  105:7   warning  Unexpected console statement                    no-console
+  107:7   warning  Unexpected console statement                    no-console
+  108:7   warning  Unexpected console statement                    no-console
+  109:7   warning  Unexpected console statement                    no-console
+  117:5   warning  Unexpected console statement                    no-console
+  118:5   warning  Unexpected console statement                    no-console
+  121:7   warning  Unexpected console statement                    no-console
+  122:7   warning  Unexpected console statement                    no-console
+  123:7   warning  Unexpected console statement                    no-console
+  125:7   warning  Unexpected console statement                    no-console
+  126:7   warning  Unexpected console statement                    no-console
+  127:7   warning  Unexpected console statement                    no-console
+  135:5   warning  Unexpected console statement                    no-console
+  136:5   warning  Unexpected console statement                    no-console
+  137:5   warning  Unexpected console statement                    no-console
+  138:5   warning  Unexpected console statement                    no-console
+  141:7   warning  Unexpected console statement                    no-console
+  142:7   warning  Unexpected console statement                    no-console
+  229:18  error    Require statement not part of import statement  @typescript-eslint/no-var-requires
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\utils\file-writer.ts
+  26:13  warning  Caution: `fs` also has a named export `ensureDir`. Check if you meant to write `import {ensureDir} from 'fs-extra'` instead    import/no-named-as-default-member
+  29:17  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  45:17  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  50:13  warning  Caution: `fs` also has a named export `writeFile`. Check if you meant to write `import {writeFile} from 'fs-extra'` instead    import/no-named-as-default-member
+  56:15  warning  Caution: `fs` also has a named export `writeFile`. Check if you meant to write `import {writeFile} from 'fs-extra'` instead    import/no-named-as-default-member
+  78:11  warning  Caution: `fs` also has a named export `copy`. Check if you meant to write `import {copy} from 'fs-extra'` instead              import/no-named-as-default-member
+  86:18  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\utils\project-detector.ts
+   41:16  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+   45:31  warning  Caution: `fs` also has a named export `readJSON`. Check if you meant to write `import {readJSON} from 'fs-extra'` instead      import/no-named-as-default-member
+   70:18  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+   79:15  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+   80:33  warning  Caution: `fs` also has a named export `readJSON`. Check if you meant to write `import {readJSON} from 'fs-extra'` instead      import/no-named-as-default-member
+   96:15  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+   97:27  warning  Caution: `fs` also has a named export `readdir`. Check if you meant to write `import {readdir} from 'fs-extra'` instead        import/no-named-as-default-member
+  120:17  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  134:18  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  143:15  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  144:33  warning  Caution: `fs` also has a named export `readJSON`. Check if you meant to write `import {readJSON} from 'fs-extra'` instead      import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\src\utils\project-scanner.ts
+   52:16  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+   85:16  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  129:17  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  131:33  warning  Caution: `fs` also has a named export `readFile`. Check if you meant to write `import {readFile} from 'fs-extra'` instead      import/no-named-as-default-member
+  178:16  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  186:27  warning  Caution: `fs` also has a named export `readdir`. Check if you meant to write `import {readdir} from 'fs-extra'` instead        import/no-named-as-default-member
+  220:16  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  225:33  warning  Caution: `fs` also has a named export `readJSON`. Check if you meant to write `import {readJSON} from 'fs-extra'` instead      import/no-named-as-default-member
+  253:16  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  258:33  warning  Caution: `fs` also has a named export `readJSON`. Check if you meant to write `import {readJSON} from 'fs-extra'` instead      import/no-named-as-default-member
+  296:16  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  332:29  warning  Caution: `fs` also has a named export `readdir`. Check if you meant to write `import {readdir} from 'fs-extra'` instead        import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\test-fixtures\sample-project\src\components\Card.tsx
+  2:19  error  Unable to resolve path to module 'react'  import/no-unresolved
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\test\context-aware-generators.test.ts
+  48:91  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  59:91  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\test\debug-scanner.ts
+   1:8  error    'path' is defined but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+  10:3  warning  Unexpected console statement                                            no-console
+  14:5  warning  Unexpected console statement                                            no-console
+  17:5  warning  Unexpected console statement                                            no-console
+  23:5  warning  Unexpected console statement                                            no-console
+  26:5  warning  Unexpected console statement                                            no-console
+  30:5  warning  Unexpected console statement                                            no-console
+  31:5  warning  Unexpected console statement                                            no-console
+  33:7  warning  Unexpected console statement                                            no-console
+  36:5  warning  Unexpected console statement                                            no-console
+  38:7  warning  Unexpected console statement                                            no-console
+  39:7  warning  Unexpected console statement                                            no-console
+  40:7  warning  Unexpected console statement                                            no-console
+  42:7  warning  Unexpected console statement                                            no-console
+  45:5  warning  Unexpected console statement                                            no-console
+  47:7  warning  Unexpected console statement                                            no-console
+  48:7  warning  Unexpected console statement                                            no-console
+  51:5  warning  Unexpected console statement                                            no-console
+  52:5  warning  Unexpected console statement                                            no-console
+  53:5  warning  Unexpected console statement                                            no-console
+  55:5  warning  Unexpected console statement                                            no-console
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\test\deep-component-scanning.test.ts
+   1:8   error    'path' is defined but never used. Allowed unused vars must match /^_/u            @typescript-eslint/no-unused-vars
+   9:10  error    'ProjectScanner' is defined but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+  14:23  error    'prompt' is defined but never used. Allowed unused args must match /^_/u          @typescript-eslint/no-unused-vars
+  14:39  error    'context' is defined but never used. Allowed unused args must match /^_/u         @typescript-eslint/no-unused-vars
+  15:18  warning  Unexpected any. Specify a different type                                          @typescript-eslint/no-explicit-any
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\test\integration-workflow.test.ts
+   18:11  warning  Caution: `fs` also has a named export `ensureDir`. Check if you meant to write `import {ensureDir} from 'fs-extra'` instead  import/no-named-as-default-member
+   19:11  warning  Caution: `fs` also has a named export `ensureDir`. Check if you meant to write `import {ensureDir} from 'fs-extra'` instead  import/no-named-as-default-member
+   20:11  warning  Caution: `fs` also has a named export `ensureDir`. Check if you meant to write `import {ensureDir} from 'fs-extra'` instead  import/no-named-as-default-member
+   45:11  warning  Caution: `fs` also has a named export `writeFile`. Check if you meant to write `import {writeFile} from 'fs-extra'` instead  import/no-named-as-default-member
+   60:11  warning  Caution: `fs` also has a named export `writeFile`. Check if you meant to write `import {writeFile} from 'fs-extra'` instead  import/no-named-as-default-member
+   74:11  warning  Caution: `fs` also has a named export `writeFile`. Check if you meant to write `import {writeFile} from 'fs-extra'` instead  import/no-named-as-default-member
+   87:11  warning  Caution: `fs` also has a named export `writeFile`. Check if you meant to write `import {writeFile} from 'fs-extra'` instead  import/no-named-as-default-member
+  217:5   warning  Unexpected console statement                                                                                                 no-console
+  218:5   warning  Unexpected console statement                                                                                                 no-console
+  219:5   warning  Unexpected console statement                                                                                                 no-console
+  220:5   warning  Unexpected console statement                                                                                                 no-console
+  221:5   warning  Unexpected console statement                                                                                                 no-console
+  222:5   warning  Unexpected console statement                                                                                                 no-console
+  223:5   warning  Unexpected console statement                                                                                                 no-console
+  224:5   warning  Unexpected console statement                                                                                                 no-console
+  225:5   warning  Unexpected console statement                                                                                                 no-console
+  226:5   warning  Unexpected console statement                                                                                                 no-console
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\test\interactive-mode.test.ts
+  20:16  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  26:74  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:10  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  48:10  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  58:10  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  67:10  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  74:70  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\vinay\Downloads\AdyaUI\packages\cli\test\manual-verification.ts
+   4:10  error    'execa' is defined but never used. Allowed unused vars must match /^_/u                                                        @typescript-eslint/no-unused-vars
+  10:3   warning  Unexpected console statement                                                                                                   no-console
+  14:5   warning  Unexpected console statement                                                                                                   no-console
+  15:11  warning  Caution: `fs` also has a named export `ensureDir`. Check if you meant to write `import {ensureDir} from 'fs-extra'` instead    import/no-named-as-default-member
+  16:11  warning  Caution: `fs` also has a named export `writeJSON`. Check if you meant to write `import {writeJSON} from 'fs-extra'` instead    import/no-named-as-default-member
+  22:11  warning  Caution: `fs` also has a named export `writeJSON`. Check if you meant to write `import {writeJSON} from 'fs-extra'` instead    import/no-named-as-default-member
+  25:5   warning  Unexpected console statement                                                                                                   no-console
+  27:11  warning  Caution: `fs` also has a named export `writeJSON`. Check if you meant to write `import {writeJSON} from 'fs-extra'` instead    import/no-named-as-default-member
+  35:5   warning  Unexpected console statement                                                                                                   no-console
+  41:5   warning  Unexpected console statement                                                                                                   no-console
+  55:55  warning  Unexpected any. Specify a different type                                                                                       @typescript-eslint/no-explicit-any
+  58:11  warning  Caution: `fs` also has a named export `ensureDir`. Check if you meant to write `import {ensureDir} from 'fs-extra'` instead    import/no-named-as-default-member
+  59:11  warning  Caution: `fs` also has a named export `writeFile`. Check if you meant to write `import {writeFile} from 'fs-extra'` instead    import/no-named-as-default-member
+  63:15  warning  Caution: `fs` also has a named export `pathExists`. Check if you meant to write `import {pathExists} from 'fs-extra'` instead  import/no-named-as-default-member
+  64:29  warning  Caution: `fs` also has a named export `readFile`. Check if you meant to write `import {readFile} from 'fs-extra'` instead      import/no-named-as-default-member
+  66:9   warning  Unexpected console statement                                                                                                   no-console
+  74:5   warning  Unexpected console statement                                                                                                   no-console
+  80:11  warning  Caution: `fs` also has a named export `remove`. Check if you meant to write `import {remove} from 'fs-extra'` instead          import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\core\src\base\aui-element.ts
+  15:59  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\vinay\Downloads\AdyaUI\packages\core\vitest.setup.ts
+  35:26  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  35:40  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  36:25  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\vinay\Downloads\AdyaUI\packages\react\src\Alert.tsx
+   4:37  warning  Caution: `React` also has a named export `HTMLAttributes`. Check if you meant to write `import {HTMLAttributes} from 'react'` instead  import/no-named-as-default-member
+  12:22  warning  Caution: `React` also has a named export `forwardRef`. Check if you meant to write `import {forwardRef} from 'react'` instead          import/no-named-as-default-member
+  14:10  warning  Caution: `React` also has a named export `createElement`. Check if you meant to write `import {createElement} from 'react'` instead    import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\react\src\Button.tsx
+   4:38  warning  Caution: `React` also has a named export `HTMLAttributes`. Check if you meant to write `import {HTMLAttributes} from 'react'` instead  import/no-named-as-default-member
+  11:23  warning  Caution: `React` also has a named export `forwardRef`. Check if you meant to write `import {forwardRef} from 'react'` instead          import/no-named-as-default-member
+  13:10  warning  Caution: `React` also has a named export `createElement`. Check if you meant to write `import {createElement} from 'react'` instead    import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\react\src\Card.tsx
+   4:36  warning  Caution: `React` also has a named export `HTMLAttributes`. Check if you meant to write `import {HTMLAttributes} from 'react'` instead  import/no-named-as-default-member
+   9:21  warning  Caution: `React` also has a named export `forwardRef`. Check if you meant to write `import {forwardRef} from 'react'` instead          import/no-named-as-default-member
+  11:10  warning  Caution: `React` also has a named export `createElement`. Check if you meant to write `import {createElement} from 'react'` instead    import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\react\src\Checkbox.tsx
+   4:40  warning  Caution: `React` also has a named export `HTMLAttributes`. Check if you meant to write `import {HTMLAttributes} from 'react'` instead  import/no-named-as-default-member
+  12:25  warning  Caution: `React` also has a named export `forwardRef`. Check if you meant to write `import {forwardRef} from 'react'` instead          import/no-named-as-default-member
+  14:10  warning  Caution: `React` also has a named export `createElement`. Check if you meant to write `import {createElement} from 'react'` instead    import/no-named-as-default-member
+
+C:\Users\vinay\Downloads\AdyaUI\packages\react\src\TextField.tsx
+   4:41  warning  Caution: `React` also has a named export `HTMLAttributes`. Check if you meant to write `import {HTMLAttributes} from 'react'` instead  import/no-named-as-default-member
+  18:26  warning  Caution: `React` also has a named export `forwardRef`. Check if you meant to write `import {forwardRef} from 'react'` instead          import/no-named-as-default-member
+  20:10  warning  Caution: `React` also has a named export `createElement`. Check if you meant to write `import {createElement} from 'react'` instead    import/no-named-as-default-member
+
+Γ£û 302 problems (14 errors, 288 warnings)
+

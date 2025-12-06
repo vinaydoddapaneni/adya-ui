@@ -1,5 +1,4 @@
 import { AuiElement } from '../../base/aui-element';
-
 import { css } from '../../base/utils';
 
 const styles = css`

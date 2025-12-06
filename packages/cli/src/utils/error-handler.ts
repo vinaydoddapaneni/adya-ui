@@ -1,3 +1,5 @@
+import path from 'path';
+
 import chalk from 'chalk';
 
 /**
@@ -226,7 +228,6 @@ export class Validator {
    * Validate output path
    */
   static validateOutputPath(outputPath: string, projectRoot: string): void {
-    const path = require('path');
     const absolutePath = path.resolve(projectRoot, outputPath);
     
     // Must be within project

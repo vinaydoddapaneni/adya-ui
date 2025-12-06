@@ -1,7 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { AuiTabs } from './aui-tabs';
+
 import { AuiTab } from './aui-tab';
 import { AuiTabPanel } from './aui-tab-panel';
+import { AuiTabs } from './aui-tabs';
 
 // Register elements
 if (!customElements.get('aui-tabs')) customElements.define('aui-tabs', AuiTabs);

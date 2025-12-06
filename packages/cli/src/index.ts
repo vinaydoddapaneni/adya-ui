@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-import { Command } from 'commander';
 import chalk from 'chalk';
-import { initCommand } from './commands/init.js';
+import { Command } from 'commander';
+
 import { aiCommand } from './commands/ai.js';
+import { initCommand } from './commands/init.js';
 
 const program = new Command();
 
@@ -52,7 +53,7 @@ program
   .description('Add specific components to your project')
   .option('-f, --framework <framework>', 'Target framework')
   .option('-o, --output <dir>', 'Output directory')
-  .action(async (components, options) => {
+  .action(async (_components, _options) => {
     console.log(chalk.yellow('\n⚠️  The "add" command is coming soon!\n'));
     console.log(chalk.gray('For now, use the "ai" command to generate components.\n'));
   });

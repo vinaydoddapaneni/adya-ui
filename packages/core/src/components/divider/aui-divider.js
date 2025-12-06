@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base/aui-element';
+
 import { styles } from './aui-divider.styles';
 export class AuiDivider extends AuiElement {
     static get observedAttributes() {

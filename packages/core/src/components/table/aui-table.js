@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base';
+
 import { styles } from './aui-table.styles';
 /**
  * AuiTable - A comprehensive table component with sorting, pagination, and selection

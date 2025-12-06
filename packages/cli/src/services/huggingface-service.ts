@@ -1,8 +1,9 @@
 import { HfInference } from '@huggingface/inference';
 
+import type { ComponentIntent, ProjectContext, AIServiceOptions } from '../types/index.js';
+
 import { BaseAIService } from './ai-service.js';
 
-import type { ComponentIntent, ProjectContext, AIServiceOptions } from '../types/index.js';
 
 /**
  * Hugging Face implementation of AI service

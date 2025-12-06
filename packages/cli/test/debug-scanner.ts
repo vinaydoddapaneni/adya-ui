@@ -1,6 +1,5 @@
-import { ProjectScanner } from '../src/utils/project-scanner.js';
 import { ProjectDetector } from '../src/utils/project-detector.js';
-import path from 'path';
+import { ProjectScanner } from '../src/utils/project-scanner.js';
 
 /**
  * Debug test for project scanner

@@ -1,14 +1,16 @@
-import inquirer from 'inquirer';
-import chalk from 'chalk';
-import ora from 'ora';
 import path from 'path';
-import { ProjectDetector } from '../utils/project-detector.js';
-import { ConfigManager } from '../utils/config-manager.js';
-import { FileWriter } from '../utils/file-writer.js';
-import { OpenAIService } from '../services/openai-service.js';
+
+import chalk from 'chalk';
+import inquirer from 'inquirer';
+import ora from 'ora';
+
 import { ReactGenerator } from '../generators/react-generator.js';
 import { VueGenerator } from '../generators/vue-generator.js';
+import { OpenAIService } from '../services/openai-service.js';
 import type { AIOptions } from '../types/index.js';
+import { ConfigManager } from '../utils/config-manager.js';
+import { FileWriter } from '../utils/file-writer.js';
+import { ProjectDetector } from '../utils/project-detector.js';
 
 /**
  * AI-powered component generation command
@@ -28,7 +30,7 @@ export async function aiCommand(options: AIOptions = {}): Promise<void> {
       console.log('');
     }
 
-    const config = await configManager.load();
+    const _config = await configManager.load();
 
     // Get API key
     const apiKey = await configManager.getApiKey();
@@ -118,9 +120,10 @@ export async function aiCommand(options: AIOptions = {}): Promise<void> {
       let finalCode = generatedCode;
       let finalIntent = intent;
       let shouldWrite = false;
+      let isDecisionMade = false;
 
       // Interactive refinement loop
-      while (true) {
+      while (!isDecisionMade) {
         const { action } = await inquirer.prompt([
           {
             type: 'list',
@@ -136,7 +139,7 @@ export async function aiCommand(options: AIOptions = {}): Promise<void> {
 
         if (action === 'approve') {
           shouldWrite = true;
-          break;
+          isDecisionMade = true;
         } else if (action === 'cancel') {
           console.log(chalk.yellow('\nCancelled.\n'));
           return;

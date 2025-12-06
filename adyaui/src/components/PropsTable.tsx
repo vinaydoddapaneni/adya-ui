@@ -1,4 +1,5 @@
 import React from 'react';
+
 import type { ComponentProp } from '../types/component';
 
 interface PropsTableProps {

@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import { AppProvider } from './context';
 import { MainLayout } from './layout/MainLayout';
-import { HomePage } from './pages/HomePage';
 import { ComponentPage } from './pages/ComponentPage';
+import { HomePage } from './pages/HomePage';
 import './styles/global.css';
 import './styles/layout.css';
 import './styles/components.css';

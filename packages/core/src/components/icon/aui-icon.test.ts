@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+
 import { AuiIcon } from './aui-icon';
 
 if (!customElements.get('aui-icon')) {

@@ -1,4 +1,5 @@
 import ollama from 'ollama';
+
 import { config } from '../config/index.js';
 
 export interface GenerateOptions {

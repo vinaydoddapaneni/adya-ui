@@ -2,8 +2,9 @@ import path from 'path';
 
 import fs from 'fs-extra';
 
-import { ComponentParser } from './component-parser.js';
 import type { ProjectContext, DesignTokens, NamingConventions, ComponentMetadata } from '../types/index.js';
+
+import { ComponentParser } from './component-parser.js';
 
 /**
  * Enhanced project scanner for AI agent context awareness

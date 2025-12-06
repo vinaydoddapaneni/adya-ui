@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base/aui-element';
+
 import { styles } from './aui-avatar.styles';
 export class AuiAvatar extends AuiElement {
     static get observedAttributes() {

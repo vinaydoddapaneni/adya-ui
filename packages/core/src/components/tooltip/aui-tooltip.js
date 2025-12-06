@@ -1,4 +1,5 @@
 import { AuiElement } from '../../base/aui-element';
+
 import { styles } from './aui-tooltip.styles';
 /**
  * AuiTooltip - A component that displays informative text when hovering over an element

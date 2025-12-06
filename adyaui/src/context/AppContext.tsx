@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import type { Framework, Theme } from './AppContext.types';
+
 import { AppContext } from './AppContext.context';
+import type { Framework, Theme } from './AppContext.types';
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Initialize framework from localStorage or default to 'react'

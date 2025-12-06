@@ -1,5 +1,7 @@
-import fs from 'fs-extra';
 import path from 'path';
+
+import fs from 'fs-extra';
+
 import type { Framework, ProjectContext } from '../types/index.js';
 
 /**

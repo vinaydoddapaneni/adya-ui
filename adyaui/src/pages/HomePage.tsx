@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { groupedComponents, categories } from '../data/componentList';
 
 export const HomePage: React.FC = () => {

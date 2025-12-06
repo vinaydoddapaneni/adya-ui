@@ -1,6 +1,8 @@
 import { Mistral } from '@mistralai/mistralai';
-import { BaseAIService } from './ai-service.js';
+
 import type { ComponentIntent, ProjectContext, AIServiceOptions } from '../types/index.js';
+
+import { BaseAIService } from './ai-service.js';
 
 /**
  * Mistral AI implementation of AI service

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { componentList } from '../data/componentList';
-import { useApp } from '../context';
+
 import { CodeBlock } from '../components/CodeBlock';
 import { PropsTable } from '../components/PropsTable';
+import { useApp } from '../context';
+import { componentList } from '../data/componentList';
 
 export const ComponentPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
