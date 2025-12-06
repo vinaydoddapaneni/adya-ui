@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import ora from 'ora';
 
-import type { InitOptions } from '../types/index.js';
+import type { Framework, InitOptions } from '../types/index.js';
 import { ConfigManager } from '../utils/config-manager.js';
 import { ProjectDetector } from '../utils/project-detector.js';
 
@@ -47,8 +47,24 @@ export async function initCommand(options: InitOptions = {}): Promise<void> {
       }
     }
 
+    // Provider names for dynamic API key prompt
+    const providerNames: Record<string, string> = {
+      openai: 'OpenAI',
+      google: 'Google',
+      anthropic: 'Anthropic',
+      cohere: 'Cohere',
+      mistral: 'Mistral',
+      huggingface: 'Hugging Face',
+    };
+
     // Prompt for configuration
-    const answers = await inquirer.prompt([
+    const answers = await inquirer.prompt<{
+      framework: Framework;
+      typescript: boolean;
+      componentDir: string;
+      aiProvider: string;
+      apiKey: string;
+    }>([
       {
         type: 'list',
         name: 'framework',
@@ -78,15 +94,20 @@ export async function initCommand(options: InitOptions = {}): Promise<void> {
         message: 'AI Provider:',
         choices: [
           { name: 'OpenAI (GPT-4)', value: 'openai' },
-          { name: 'Anthropic (Claude) - Coming soon', value: 'anthropic', disabled: true },
+          { name: 'Google (Gemini)', value: 'google' },
+          { name: 'Anthropic (Claude)', value: 'anthropic' },
+          { name: 'Cohere (Command)', value: 'cohere' },
+          { name: 'Mistral AI', value: 'mistral' },
+          { name: 'Hugging Face', value: 'huggingface' },
         ],
         default: 'openai',
       },
       {
         type: 'password',
         name: 'apiKey',
-        message: 'OpenAI API Key (optional, can be set later):',
-        when: (answers) => answers.aiProvider === 'openai',
+        message: (currentAnswers: { aiProvider: string }) => {
+          return `${providerNames[currentAnswers.aiProvider] || 'API'} API Key (optional, can be set later):`;
+        },
       },
     ]);
 

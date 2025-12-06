@@ -134,7 +134,7 @@ export interface AdyaUIConfig {
   typescript: boolean;
   componentDir: string;
   styleFormat: string;
-  aiProvider: 'openai' | 'anthropic';
+  aiProvider: 'openai' | 'anthropic' | 'google' | 'cohere' | 'mistral' | 'huggingface';
   apiKey?: string;
   preferences: {
     functionalComponents: boolean;

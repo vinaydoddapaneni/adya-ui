@@ -6,7 +6,7 @@ import ora from 'ora';
 
 import { ReactGenerator } from '../generators/react-generator.js';
 import { VueGenerator } from '../generators/vue-generator.js';
-import { OpenAIService } from '../services/openai-service.js';
+import { AIServiceFactory } from '../services/ai-service-factory.js';
 import type { AIOptions } from '../types/index.js';
 import { ConfigManager } from '../utils/config-manager.js';
 import { FileWriter } from '../utils/file-writer.js';
@@ -30,7 +30,7 @@ export async function aiCommand(options: AIOptions = {}): Promise<void> {
       console.log('');
     }
 
-    const _config = await configManager.load();
+    const config = await configManager.load();
 
     // Get API key
     const apiKey = await configManager.getApiKey();
@@ -73,7 +73,10 @@ export async function aiCommand(options: AIOptions = {}): Promise<void> {
     const spinner = ora('Analyzing your request with AI...').start();
 
     try {
-      const aiService = new OpenAIService({ apiKey });
+      const aiProvider = config.aiProvider || 'openai';
+      console.log(chalk.gray(`AI Provider: ${aiProvider}\n`));
+      
+      const aiService = AIServiceFactory.createService(aiProvider, { apiKey });
       const intent = await aiService.analyzePrompt(prompt!, context);
 
       spinner.succeed('AI analysis complete');
