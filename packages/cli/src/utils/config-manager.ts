@@ -100,12 +100,18 @@ export class ConfigManager {
   /**
    * Initialize config with detected values
    */
-  async initialize(framework: Framework, typescript: boolean, componentDir: string): Promise<void> {
+  async initialize(
+    framework: Framework, 
+    typescript: boolean, 
+    componentDir: string,
+    aiProvider: AdyaUIConfig['aiProvider'] = 'openai'
+  ): Promise<void> {
     const config: AdyaUIConfig = {
       ...DEFAULT_CONFIG,
       framework,
       typescript,
       componentDir,
+      aiProvider,
     };
 
     await fs.writeJSON(this.configPath, config, { spaces: 2 });

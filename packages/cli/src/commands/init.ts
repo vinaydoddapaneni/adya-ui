@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import ora from 'ora';
 
-import type { Framework, InitOptions } from '../types/index.js';
+import type { AdyaUIConfig, Framework, InitOptions } from '../types/index.js';
 import { ConfigManager } from '../utils/config-manager.js';
 import { ProjectDetector } from '../utils/project-detector.js';
 
@@ -116,7 +116,8 @@ export async function initCommand(options: InitOptions = {}): Promise<void> {
     await configManager.initialize(
       answers.framework,
       answers.typescript,
-      answers.componentDir
+      answers.componentDir,
+      answers.aiProvider as AdyaUIConfig['aiProvider']
     );
 
     if (answers.apiKey) {
